@@ -19,7 +19,7 @@ html
 
       nav
         ul
-          - var links = ['about', 'projects', 'resume', 'say hi']
+          - var links = ['about', 'projects', 'say hi']
           each link, index in links
             if index != 0
               span &nbsp;&middot;&nbsp;
@@ -29,8 +29,6 @@ html
                   a(href='/')= link
                 else if link == 'say hi'
                   a(href='mailto:wrong92@gmail.com')= link
-                else if link == 'resume'
-                  a(href='/resume.pdf')= link
                 else
                   a(href='/#{link}.html')= link
               else
