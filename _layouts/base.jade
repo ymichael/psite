@@ -16,7 +16,7 @@ html
 
       nav
         ul
-          - var links = ['about', 'projects', 'resume', 'say hi']
+          - var links = ['about', 'projects', 'say hi']
           each link, index in links
             if index != 0
               span &nbsp;&middot;&nbsp;
@@ -34,14 +34,15 @@ html
       #main!= body
       
       footer
-        a(href='#')
+        a(href='https://github.com/ymichael',
+          target='_blank')
           .icon.github
-        a(href='#')
+        a(href='http://twitter.com/_ymichael',
+          target='_blank')
           .icon.twitter
-        a(href='#')
+        a(href='https://www.quora.com/Michael-Yong',
+          target='_blank')
           .icon.quora
-        a(href='#')
-          .icon.facebook
 
 
         
