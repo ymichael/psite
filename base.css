@@ -27,10 +27,6 @@ a {
   text-decoration: none;
 }
 
-.active {
-  font-size: 1.15em;
-}
-
 nav li {
   display: inline-block; 
 }
