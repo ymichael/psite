@@ -5,6 +5,7 @@ html, body {
 
 .container {
   padding: 10px;
+  padding-bottom: 50px;
   max-width: 500px;
 }
 
