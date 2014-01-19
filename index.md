@@ -2,8 +2,8 @@
 layout: base
 page: about
 ---
-Hi there, I'm michael. I'm a rising junior pursuing an undergraduate degree in Computer Science at the National University of Singapore (NUS).
+Hi there, I'm michael. I'm a junior pursuing an undergraduate degree in Computer Science at the National University of Singapore (NUS).
 
-I'm currently at [Quora](//quora.com) as a Software Engineering Intern. 
+Previously, I was an intern at Google on the Docs team. I also did a Software Engineering internship at [Quora](//quora.com). I used to run [NUS Hackers](//nushackers.org), started [hackerschool](//school.nushackers.org) and [project intern](//ymichael.github.io/projectintern).
 
-Previously, I was an intern at Google on the Docs team. I used to run [NUS Hackers](//nushackers.org), started [hackerschool](//school.nushackers.org) and [project intern](//ymichael.github.io/projectintern).
+I'll be at Google New York in the coming summer (2014).
