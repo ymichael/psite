@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Decisions"
-date:   2013-10-08
+date:   2012-10-08
 ---
 
 > how do I make decisions?
