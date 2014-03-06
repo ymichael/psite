@@ -1,7 +1,7 @@
 html, body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
-  color: #555555;
+  color: #777;
 }
 
 .container {
@@ -35,7 +35,7 @@ nav {
 }
 
 a {
-  color: #444444;
+  color: #000;
   text-decoration: none;
 }
 

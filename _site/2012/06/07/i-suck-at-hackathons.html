@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>I suck at hackathons</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,400" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/css/base.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <a href='/'>
+                    <h1><strong>y</strong><span>michael</span></h1>
+                </a>
+            </header>
+            <nav>
+                <ul>
+                    <li class='navlink'><a href="/about.html">about</a></li>
+                    <li class='navlink'><a href="/posts.html">posts</a></li>
+                    <li class='navlink'><a href="/projects.html">projects</a></li>
+                    <li class='navlink'><a href="mailto:wrong92@gmail.com">say hi</a></li>
+                </ul>
+            </nav>
+            <div><h1>I suck at hackathons</h1>
+<p class="meta">07 Jun 2012</p>
+<div class="post">
+	<p>I attended the recently concluded <a href='http://www.superhappydevhouse.sg/'>#shdh</a>. It was awesome. There was great coffee, beer, food and above all, a great crowd.</p>
+
+<p>Sadly, I don&#8217;t have anything to show for it.</p>
+
+<p>I started the event learning <a href='http://learnyouahaskell.com/'>Haskell</a>. But I gave up once I hit <code>Functors</code> and <code>Monads</code>. I then set out to making a <a href='https://gemnasium.com'>Gemnasium</a> clone for <code>nodejs</code> projects.</p>
+
+<blockquote>
+<p>Gemnasium keeps you up to date on the gems that matter to you.</p>
+</blockquote>
+
+<p>We parse your Ruby projects’ gem dependencies and notify you when new versions are released <footer>- <cite>Gemnasium.com</cite></footer></p>
+
+<p>I proceeded to do the following:</p>
+
+<ul>
+<li>hooked up github&#8217;s oath.</li>
+
+<li>retrieved a list of the authenticated user&#8217;s repositories.</li>
+
+<li>checked each repo for a <code>package.json</code> file and/or a <code>node_modules</code> directory.</li>
+
+<li>for each relevant repository, detect the dependencies</li>
+
+<li>check their version against the npm registry.</li>
+
+<li>notify the user if and when any dependencies are outdated</li>
+</ul>
+
+<p>As it turns out, <code>rubygems</code> exposes a web hook which <code>npm</code> does not. However, the npm registry is hosted on couchdb which exposes a <a href='http://isaacs.iriscouch.net/registry/_changes?feed=continuous'>&#8220;changes&#8221; feed</a>.</p>
+
+<p>Anyway, as I reached the last part, fatigue got the better of me and I stopped. Probably also due to the many unknowns that I hadn&#8217;t figured out.</p>
+
+<p>As a result, I have nothing to show for #shdh. Nothing to show for the day&#8217;s worth of &#8220;hacking&#8221;.</p>
+
+<p>Many people would call this a failure. A waste of time. But I regret nothing. Neither do I see it as a failure. If anything it was a great experience. if I had to redo the entire thing, I probably do the same thing.</p>
+
+<p>In many ways, hackathons are like races. You spend time hacking in isolation (training) and come race-day, you pit your skills against other hackers and see how you fare against the playing field.</p>
+
+<p>Its a great time to get a sense of where you stand and perhaps, recalibrate your ego.</p>
+
+<p>I suck at hackathons but I like them anyway. Now back to training.</p>
+</div></div>
+            <footer>
+                <a href="https://github.com/ymichael" target="_blank">
+                    <div class="icon github"></div>
+                </a>
+                <a href="http://twitter.com/_ymichael" target="_blank">
+                    <div class="icon twitter"></div>
+                </a>
+                <a href="https://www.quora.com/Michael-Yong" target="_blank">
+                    <div class="icon quora"></div>
+                </a>
+            </footer>
+        </div>
+    </body>
+</html>

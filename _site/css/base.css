@@ -1,6 +1,7 @@
 html, body {
   font-family: 'Josefin Sans', sans-serif;
-  color: #555555;
+  font-size: 18px;
+  color: #777;
 }
 
 .container {
@@ -19,12 +20,22 @@ ul {
   margin: 0;
 }
 
+blockquote {
+  padding-left: 30px;
+  margin-left: 0;
+  border-left: 8px solid #ccc;
+}
+
 nav {
   margin-bottom: 20px;
 }
 
+.navlink {
+  margin: 5px;
+}
+
 a {
-  color: #444444;
+  color: #000;
   text-decoration: none;
 }
 
@@ -65,4 +76,18 @@ footer {
 }
 .twitter {
   background-image: url(/img/twitter.png);
+}
+
+
+li .post {
+  margin: 15px 0;
+}
+
+li .post a {
+  font-size: 20px;
+}
+
+li time {
+  display: block;
+  font-size: 0.9em;
 }
