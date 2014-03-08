@@ -7,14 +7,18 @@ page: home
 <ul>
     {% for post in site.posts %}
     <li>
-        <div class='post'>
-            <strong>
-                <a href="{{ post.url }}">{{ post.title }}</a>
-            </strong>
-            <time pubdate datetime="{{ post.date }}">
-                {{ post.date | date: "%-d %B %Y" }}
-            </time>
-        </div>
+        <article class='post' itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+                <time pubdate itemprop="datePublished" datetime="{{ post.date }}" content="{{ post.date }}">
+                    {{ post.date | date: "%-d %B %Y" }}
+                </time>
+                <h1 itemprop="name">
+                    <a href='{{ page.baseurl }}{{ post.url }}' itemprop="url">
+                        {{ post.title }}
+                    </a>
+                </h1>
+            </header>
+        </article>
     </li>
     {% endfor %}
 </ul>
