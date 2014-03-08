@@ -9,6 +9,7 @@ date:   2012-10-08
 For the better part of last week, I struggle with the above question. 
 
 As I searched for the answer to the question, a part of me wanted it to be logical. That I made decisions based on logic, scientific and justifiable. That I made decision based on my values, not whim, the weather or some random number..
+<!--more-->
 
 Yet, the truth is far from it. In fact, I'm not even sure I use the same decision making _algorithm_ each time.
 

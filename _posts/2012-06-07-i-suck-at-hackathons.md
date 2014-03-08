@@ -7,6 +7,7 @@ date:   2012-06-07
 I attended the recently concluded [#shdh](http://www.superhappydevhouse.sg/). It was awesome. There was great coffee, beer, food and above all, a great crowd. 
 
 Sadly, I don't have anything to show for it.
+<!--more-->
 
 I started the event learning [Haskell](http://learnyouahaskell.com/). But I gave up once I hit `Functors` and `Monads`. I then set out to making a [Gemnasium](https://gemnasium.com) clone for `nodejs` projects.
 

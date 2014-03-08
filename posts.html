@@ -12,12 +12,20 @@ page: home
                 <time pubdate itemprop="datePublished" datetime="{{ post.date }}" content="{{ post.date }}">
                     {{ post.date | date: "%-d %B %Y" }}
                 </time>
-                <h1 itemprop="name">
+                <h1 itemprop="name" class="post_title">
                     <a href='{{ page.baseurl }}{{ post.url }}' itemprop="url">
                         {{ post.title }}
                     </a>
                 </h1>
             </header>
+            <section>
+                {% if post.content contains '<!--more-->' %}
+                    {{ post.content | split:'<!--more-->' | first }}
+                    <a href='{{ page.baseurl }}{{ post.url }}' itemprop="url" class='readmore'>Read More...</a>
+                {% else %}
+                    {{ post.content }}
+                {% endif %}
+            </section>
         </article>
     </li>
     {% endfor %}

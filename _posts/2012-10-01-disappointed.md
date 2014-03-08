@@ -7,6 +7,7 @@ date:   2012-10-01
 Building Coffee proved to be a great learning experience. **I learnt so much.**
 
 I learnt about [server management](https://github.com/sitaramc/gitolite). I learnt about [offlining an application](http://blip.tv/jsconf/jsconf2012-jake-archibald-appcache-douchebag-6143723). I learnt about [the importance of data structures](http://programmers.stackexchange.com/questions/163185/torvalds-quote-about-good-programmer) while trying to implement, albeit unsuccessfully, _a recursively defined list of lists_. 
+<!--more-->
 
 Interestingly, I also learnt _[coffee](http://coffeescript.org)_.
 

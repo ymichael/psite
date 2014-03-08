@@ -9,6 +9,7 @@ Last week, it hit me during one of my midterms that I was not making the best us
 I realised that while I wasn’t particularly lazy and didn't spend a lot of time playing, I hadn’t exactly spend my time doing anything worthwhile at all. I was doing my school work. Yet learning seem to be marginal at best.
 
 This troubled me greatly and I've decided to try and "fix" this by deliberately doing stuff.
+<!--more-->
 
 For a week now, I’ve made a commitment to myself to do the following on a weekly basis:
 

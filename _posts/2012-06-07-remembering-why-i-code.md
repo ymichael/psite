@@ -7,6 +7,7 @@ date:   2012-06-07
 I bought this [domain](http://yrmichael.com) about 2 months ago. It was intended to be a personal site of sorts, to make it easier for me to share the stuff I build.
 
 Yet, for some reason, I never got round to making my personal site. (Till now.) Well, I could attribute this delay to my finals and being busy with other stuff. But the truth is, I didn't really want to. I procrastinated. I was lazy.
+<!--more-->
 
 I was afraid of being judged. That once I made something, it would define me. More so a personal site. As a result, I simply set my nodejs server to respond to any http requests with the request object.
 

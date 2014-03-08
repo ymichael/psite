@@ -7,32 +7,28 @@
         <meta name="viewport" content="width=device-width">
         <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,400" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/css/base.css">
+        <link rel="stylesheet" href="/css/syntax.css">
 
     </head>
     <body itemscope itemtype="http://schema.org/WebPage">
         <div class="container">
-            <header>
-                <a href='/'>
-                    <h1><strong>y</strong><span>michael</span></h1>
-                </a>
-            </header>
-            <nav>
-                <ul>
-                    <li class='navlink'><a href="/about.html">about</a></li>
-                    <li class='navlink'><a href="/posts.html">posts</a></li>
-                    <li class='navlink'><a href="/projects.html">projects</a></li>
-                    <li class='navlink'><a href="mailto:wrong92@gmail.com">say hi</a></li>
-                </ul>
-            </nav>
-            <div role="main"><article itemscope itemtype="http://schema.org/BlogPosting">
+            
+                <nav>
+                    <ul>
+                        <li class='navlink'><a href='/'>~/</a></li>
+                        <li class='navlink'><a href="/posts.html">posts</a></li>
+                        <li class='navlink'><a href="/projects.html">projects</a></li>
+                        <li class='navlink'><a href="mailto:wrong92@gmail.com">say hi</a></li>
+                    </ul>
+                </nav>
+                <div role="main"><article class='post' itemscope itemtype="http://schema.org/BlogPosting">
     <header>
         <time pubdate itemprop="datePublished" datetime="2014-03-08 00:00:00 +0800" content="2014-03-08 00:00:00 +0800">
             08 Mar 2014
         </time>
-        <h1 itemprop="name">Profiling python wth cProfile</h1>
+        <h1 class='post_title' itemprop="name">Profiling python wth cProfile</h1>
     </header>
-
-    <div class='post'><p>A couple of days ago, I had an assignment for an <a href='comp.nus.edu.sg/~kanmy/courses/3245_2014/index.html'>Information Retrieval class</a> that basically involved:</p>
+    <section><p>A couple of days ago, I had an assignment for an <a href='comp.nus.edu.sg/~kanmy/courses/3245_2014/index.html'>Information Retrieval class</a> that basically involved:</p>
 
 <ol>
 <li>Indexing a large corpus <strong>(Reuters from <code>nltk</code>)</strong></li>
@@ -42,7 +38,7 @@
 
 <p>For the second part of the of the assignment, performance was pretty important. Since we would want to return results for the user&#8217;s queries quickly.</p>
 
-<p><em>This blogpost is basically about how I used python&#8217;s cProfile to identify and fix bottlenecks/slow parts in my code.</em> Most of these bottlenecks would have been hard to identify without the profiler.</p>
+<p><em>This blogpost is basically about how I used python&#8217;s cProfile to identify and fix bottlenecks/slow parts in my code.</em> Most of these bottlenecks would have been hard to identify without the profiler. <!--more--></p>
 
 <p>During my internship at Quora, one of the things I worked on was POST speed improvements for core actions across the product. It was my first brush with trying to speed work and the main lesson I took away was the importance of measuring and profiling before attempting to optimise.</p>
 
@@ -53,18 +49,16 @@
 <h2 id='measure'>Measure</h2>
 
 <p>After getting a working submission out. I proceeded to measure my code. Since this program was meant to run as a script from the command line, I used the simple <code>time</code> commandline tool to roughly benchmark how fast my code was.</p>
-
-<pre><code>time python search.py
-# real    0m1.521s
-# user    0m1.250s
-# sys     0m0.142s</code></pre>
-
+<div class='highlight'><pre><code class='bash'><span class='nb'>time </span>python search.py
+<span class='c'># real    0m1.521s</span>
+<span class='c'># user    0m1.250s</span>
+<span class='c'># sys     0m0.142s</span>
+</code></pre></div>
 <h2 id='profile'>Profile</h2>
 
 <p>Once I was happy with the measurement, proceeded to profile my code using cProfile.</p>
-
-<pre><code>python -m cProfile -o profile_output search.py</code></pre>
-
+<div class='highlight'><pre><code class='bash'>python -m cProfile -o profile_output search.py
+</code></pre></div>
 <p>The <code>-o</code> flag basically specifies an output filename for cProfile to write its output to. (Without which, it&#8217;ll simply spit out the stats to the stdout, which is undesirable since we&#8217;d be unable to sort/drill down into specific function.)</p>
 
 <h2 id='making_sense_of_the_cprofile_output'>Making sense of the cProfile output</h2>
@@ -106,15 +100,14 @@
 <p><em>(These as oppose to manually calling methods on the Stats object each time.)</em></p>
 
 <p>So I wrote this: <a href='https://github.com/ymichael/cprofilev'>CProfileV</a>. Which is bacially a thin wrapper for viewing python cProfile output in your browser. Yay!</p>
+<div class='highlight'><pre><code class='bash'><span class='c'># Install cprofilev</span>
+<span class='nv'>$ </span>sudo pip install cprofilev
 
-<pre><code># Install cprofilev
-$ sudo pip install cprofilev
+<span class='c'># Call it with your cprofile output</span>
+<span class='nv'>$ </span>cprofilev /path/to/cprofile/output
 
-# Call it with your cprofile output
-$ cprofilev /path/to/cprofile/output
-
-# Navigate to http://localhost:4000</code></pre>
-
+<span class='c'># Navigate to http://localhost:4000</span>
+</code></pre></div>
 <p><img alt='cprofilev1' src='/img/blog/cprofilev1.png' /></p>
 
 <h3 id='finding_the_bottlenecks'>Finding the bottlenecks</h3>
@@ -138,72 +131,69 @@ $ cprofilev /path/to/cprofile/output
 <p>Clicking into the <code>not_operation</code> showed that the functions it was calling were not taking a lot of time. (Implying that the slowness was due to some code within the function itself.)</p>
 
 <p><img alt='cprofilev3-not-operation' src='/img/blog/cprofilev3-not-operation.png' /></p>
+<div class='highlight'><pre><code class='python'><span class='c'># line 76 of search_index.py</span>
+<span class='k'>def</span> <span class='nf'>not_operation</span><span class='p'>(</span><span class='n'>operand</span><span class='p'>,</span> <span class='n'>dictionary</span><span class='p'>,</span> <span class='n'>pfile</span><span class='p'>):</span>
+    <span class='sd'>&quot;&quot;&quot;Performs the operation `NOT operand`.&quot;&quot;&quot;</span>
 
-<pre><code># line 76 of search_index.py
-def not_operation(operand, dictionary, pfile):
-    &quot;&quot;&quot;Performs the operation `NOT operand`.&quot;&quot;&quot;
+    <span class='c'># A list of all the documents (sorted)</span>
+    <span class='n'>all_docs</span> <span class='o'>=</span> <span class='n'>dictionary</span><span class='o'>.</span><span class='n'>all_docs</span><span class='p'>()</span>
 
-    # A list of all the documents (sorted)
-    all_docs = dictionary.all_docs()
+    <span class='c'># A list of the documents matching `operand` (sorted)</span>
+    <span class='n'>results</span> <span class='o'>=</span> <span class='n'>get_results</span><span class='p'>(</span><span class='n'>operand</span><span class='p'>,</span> <span class='n'>dictionary</span><span class='p'>,</span> <span class='n'>pfile</span><span class='p'>,</span> <span class='n'>force_list</span><span class='o'>=</span><span class='bp'>True</span><span class='p'>)</span>
 
-    # A list of the documents matching `operand` (sorted)
-    results = get_results(operand, dictionary, pfile, force_list=True)
-
-    return [doc for doc in all_docs if doc not in results]</code></pre>
-
+    <span class='k'>return</span> <span class='p'>[</span><span class='n'>doc</span> <span class='k'>for</span> <span class='n'>doc</span> <span class='ow'>in</span> <span class='n'>all_docs</span> <span class='k'>if</span> <span class='n'>doc</span> <span class='ow'>not</span> <span class='ow'>in</span> <span class='n'>results</span><span class='p'>]</span>
+</code></pre></div>
 <p>So it turns out that the list comprehension in the function was basically really inefficient. It became super obvious once I narrowed down that <code>not_operation</code> was slow.</p>
 
 <h3 id='optimisefix_ineffient_code'>Optimise/Fix ineffient code</h3>
 
 <p>Excited to have found a possible bottleneck, I quickly implemented a fix.</p>
+<div class='highlight'><pre><code class='python'><span class='c'># the fix.</span>
+<span class='k'>def</span> <span class='nf'>not_operation</span><span class='p'>(</span><span class='n'>operand</span><span class='p'>,</span> <span class='n'>dictionary</span><span class='p'>,</span> <span class='n'>pfile</span><span class='p'>):</span>
+    <span class='sd'>&quot;&quot;&quot;Performs the operation `NOT operand`.&quot;&quot;&quot;</span>
 
-<pre><code># the fix.
-def not_operation(operand, dictionary, pfile):
-    &quot;&quot;&quot;Performs the operation `NOT operand`.&quot;&quot;&quot;
+    <span class='c'># A list of all the documents (sorted)</span>
+    <span class='n'>all_docs</span> <span class='o'>=</span> <span class='n'>dictionary</span><span class='o'>.</span><span class='n'>all_docs</span><span class='p'>()</span>
 
-    # A list of all the documents (sorted)
-    all_docs = dictionary.all_docs()
+    <span class='c'># A list of the documents matching `operand` (sorted)</span>
+    <span class='n'>results</span> <span class='o'>=</span> <span class='n'>get_results</span><span class='p'>(</span><span class='n'>operand</span><span class='p'>,</span> <span class='n'>dictionary</span><span class='p'>,</span> <span class='n'>pfile</span><span class='p'>,</span> <span class='n'>force_list</span><span class='o'>=</span><span class='bp'>True</span><span class='p'>)</span>
 
-    # A list of the documents matching `operand` (sorted)
-    results = get_results(operand, dictionary, pfile, force_list=True)
-
-    return list_a_and_not_list_b(all_docs, results)
+    <span class='k'>return</span> <span class='n'>list_a_and_not_list_b</span><span class='p'>(</span><span class='n'>all_docs</span><span class='p'>,</span> <span class='n'>results</span><span class='p'>)</span>
 
 
-def list_a_and_not_list_b(a, b):
-    &quot;&quot;&quot;Returns `a AND NOT b`.
+<span class='k'>def</span> <span class='nf'>list_a_and_not_list_b</span><span class='p'>(</span><span class='n'>a</span><span class='p'>,</span> <span class='n'>b</span><span class='p'>):</span>
+    <span class='sd'>&quot;&quot;&quot;Returns `a AND NOT b`.</span>
 
-    Both a and b are expected to be sorted lists.
+<span class='sd'>    Both a and b are expected to be sorted lists.</span>
 
-    &quot;&quot;&quot;
-    results = []
-    idx_a = 0
-    idx_b = 0
-    while idx_a &lt; len(a) and idx_b &lt; len(b):
-        if a[idx_a] &lt; b[idx_b]:
-            results.append(a[idx_a])
-            idx_a += 1
-        elif b[idx_b] &lt; a[idx_a]:
-            idx_b += 1
-        else:
-            idx_a += 1
-            idx_b += 1
+<span class='sd'>    &quot;&quot;&quot;</span>
+    <span class='n'>results</span> <span class='o'>=</span> <span class='p'>[]</span>
+    <span class='n'>idx_a</span> <span class='o'>=</span> <span class='mi'>0</span>
+    <span class='n'>idx_b</span> <span class='o'>=</span> <span class='mi'>0</span>
+    <span class='k'>while</span> <span class='n'>idx_a</span> <span class='o'>&lt;</span> <span class='nb'>len</span><span class='p'>(</span><span class='n'>a</span><span class='p'>)</span> <span class='ow'>and</span> <span class='n'>idx_b</span> <span class='o'>&lt;</span> <span class='nb'>len</span><span class='p'>(</span><span class='n'>b</span><span class='p'>):</span>
+        <span class='k'>if</span> <span class='n'>a</span><span class='p'>[</span><span class='n'>idx_a</span><span class='p'>]</span> <span class='o'>&lt;</span> <span class='n'>b</span><span class='p'>[</span><span class='n'>idx_b</span><span class='p'>]:</span>
+            <span class='n'>results</span><span class='o'>.</span><span class='n'>append</span><span class='p'>(</span><span class='n'>a</span><span class='p'>[</span><span class='n'>idx_a</span><span class='p'>])</span>
+            <span class='n'>idx_a</span> <span class='o'>+=</span> <span class='mi'>1</span>
+        <span class='k'>elif</span> <span class='n'>b</span><span class='p'>[</span><span class='n'>idx_b</span><span class='p'>]</span> <span class='o'>&lt;</span> <span class='n'>a</span><span class='p'>[</span><span class='n'>idx_a</span><span class='p'>]:</span>
+            <span class='n'>idx_b</span> <span class='o'>+=</span> <span class='mi'>1</span>
+        <span class='k'>else</span><span class='p'>:</span>
+            <span class='n'>idx_a</span> <span class='o'>+=</span> <span class='mi'>1</span>
+            <span class='n'>idx_b</span> <span class='o'>+=</span> <span class='mi'>1</span>
 
-    while idx_a &lt; len(a):
-        results.append(a[idx_a])
-        idx_a += 1
+    <span class='k'>while</span> <span class='n'>idx_a</span> <span class='o'>&lt;</span> <span class='nb'>len</span><span class='p'>(</span><span class='n'>a</span><span class='p'>):</span>
+        <span class='n'>results</span><span class='o'>.</span><span class='n'>append</span><span class='p'>(</span><span class='n'>a</span><span class='p'>[</span><span class='n'>idx_a</span><span class='p'>])</span>
+        <span class='n'>idx_a</span> <span class='o'>+=</span> <span class='mi'>1</span>
 
-    return results</code></pre>
-
+    <span class='k'>return</span> <span class='n'>results</span>
+</code></pre></div>
 <h2 id='measure_again'>Measure again</h2>
 
 <p>Measuring the time taken showed promising results. With this fix, the time taken dropped from roughly 1.5s to 1.15s.</p>
-
-<pre><code>time python search.py
-# real    0m1.160s
-# user    0m1.018s
-# sys     0m0.133s</code></pre>
-
+<div class='highlight'><pre><code class='bash'><span class='nb'>time </span>python search.py
+<span class='c'># real    0m1.160s</span>
+<span class='c'># user    0m1.018s</span>
+<span class='c'># sys     0m0.133s</span>
+</code></pre></div>
 <p>Profiling the code showed that the slowness was no longer coming from <code>not_operation</code>.</p>
 
 <p><img alt='cprofilev4-not-operation' src='/img/blog/cprofilev4-not-operation.png' /></p>
@@ -212,35 +202,34 @@ def list_a_and_not_list_b(a, b):
 
 <p>This time though, the most of the time seemed to be spent in the <code>list_a_and_not_list_b</code> operation.</p>
 
-<p><img alt='cprofilev5-bool-operation' src='/img/blog/cprofilev4-bool-operation.png' /></p>
+<p><img alt='cprofilev5-bool-operation' src='/img/blog/cprofilev5-bool-operation.png' /></p>
 
 <p>In particular, I seemed to be doing 200k <code>len</code> operations and 115 <code>append</code> operations on some list objects.</p>
 
 <p>This seemed like a red-flag so I took a closer look at the <code>list_a_and_not_list_b</code> function.</p>
 
 <p>It turns out that I really didn&#8217;t need the while loop at the end of the function.</p>
+<div class='highlight'><pre><code class='python'><span class='c'># From this.</span>
+<span class='k'>while</span> <span class='n'>idx_a</span> <span class='o'>&lt;</span> <span class='nb'>len</span><span class='p'>(</span><span class='n'>a</span><span class='p'>):</span>
+    <span class='n'>results</span><span class='o'>.</span><span class='n'>append</span><span class='p'>(</span><span class='n'>a</span><span class='p'>[</span><span class='n'>idx_a</span><span class='p'>])</span>
+    <span class='n'>idx_a</span> <span class='o'>+=</span> <span class='mi'>1</span>
 
-<pre><code>    # From this.
-    while idx_a &lt; len(a):
-        results.append(a[idx_a])
-        idx_a += 1
-
-    # To this.
-    results.extend(a[idx_a:])</code></pre>
-
+<span class='c'># To this.</span>
+<span class='n'>results</span><span class='o'>.</span><span class='n'>extend</span><span class='p'>(</span><span class='n'>a</span><span class='p'>[</span><span class='n'>idx_a</span><span class='p'>:])</span>
+</code></pre></div>
 <p>Measuring with this new change:</p>
-
-<pre><code>time python search.py
-real    0m0.895s
-user    0m0.771s
-sys     0m0.122s</code></pre>
-
+<div class='highlight'><pre><code class='bash'><span class='nb'>time </span>python search.py
+<span class='c'># real    0m0.895s</span>
+<span class='c'># user    0m0.771s</span>
+<span class='c'># sys     0m0.122s</span>
+</code></pre></div>
 <p><em>Woot! Got it to run under a second!</em></p>
 
 <h2 id='summary'>Summary</h2>
 
-<p>Overall, I&#8217;m pretty happy with the performance gain I got. I did a couple more that I didn&#8217;t cover here (some other boolean operations were performing poorly under other testcases). Its a pretty cool feeling to methodically find bottlenecks and fix them.</p></div>
+<p>Overall, I&#8217;m pretty happy with the performance gain I got. I did a couple more that I didn&#8217;t cover here (some other boolean operations were performing poorly under other testcases). Its a pretty cool feeling to methodically find bottlenecks and fix them.</p></section>
 </article></div>
+            
             <footer>
                 <a href="https://github.com/ymichael" target="_blank">
                     <div class="icon github"></div>

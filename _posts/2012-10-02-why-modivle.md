@@ -7,6 +7,7 @@ date:   2012-10-02
 A question that keeps coming up regarding [MODIVLE](http://modivle.yrmichael.com) is why I'm doing it and what made me do it.
 
 Well, here it is:
+<!--more-->
 
 ## What happened
 

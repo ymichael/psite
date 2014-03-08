@@ -7,7 +7,6 @@ html, body {
 .container {
   padding: 10px;
   padding-bottom: 50px;
-  max-width: 500px;
 }
 
 strong {
@@ -23,6 +22,7 @@ ul {
 blockquote {
   padding-left: 30px;
   margin-left: 0;
+  font-style: italic;
   border-left: 8px solid #ccc;
 }
 
@@ -32,6 +32,10 @@ nav {
 
 .navlink {
   margin: 5px;
+}
+
+.navlink:first-child {
+  margin-left: 0;
 }
 
 a {
@@ -82,25 +86,63 @@ footer {
 /**
  * List of posts
  **/
-li .post {
-  margin: 15px 0;
+.post {
+  margin: 30px 0;
+  max-width: 95%;
 }
 
-li .post a {
-  font-size: 20px;
+.static_content,
+.post p,
+.post blockquote {
+  max-width: 500px;
 }
 
-li time {
+
+.post .readmore {
+  font-style: italic;
+}
+
+.post section *:first-child {
+  margin-top: 0;
+}
+
+.post .post_title{
+  font-size: 1.9em;
+  padding: 5px 0;
+  margin: 0;
+  color : #000;
+}
+
+.post time {
   display: block;
   font-size: 0.9em;
+  color: #9EABB3;
 }
 
+.post code {
+  color: #060606;
+}
+
+.post ul {
+  list-style: circle inside;
+}
+.post li {
+  margin: 3px 0;
+}
+
+.post pre {
+  display: inline-block;
+  background-color: #f4f4f4;
+  margin-top: 0.2em;
+  padding: 0.6em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
 
 /**
  * Post page
  **/
 .post img {
-  max-height: 400px;
+  max-width: 500px;
   display: block;
-  margin: auto;
 }

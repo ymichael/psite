@@ -7,6 +7,7 @@ date:   2012-09-03
 For the first project assignment, my team is building a social network. Well, not quite. Think twitter's open nature built on Facebook's social graph minus identities. 
 
 Meet Hush.
+<!--more-->
 
 Initially, my team used twitter's awesome bootstrap library to bootstrap (I apologise for the poor play on words) our site. Primarily because we wanted to get it off the ground fast, focusing on the flow of the application rather than get bogged down by the nitty-gritty details of how every pixel should look.
 

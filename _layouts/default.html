@@ -7,24 +7,37 @@
         <meta name="viewport" content="width=device-width">
         <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,400" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{ page.baseurl }}/css/base.css">
+        <link rel="stylesheet" href="{{ page.baseurl }}/css/syntax.css">
 
     </head>
     <body itemscope itemtype="http://schema.org/WebPage">
         <div class="container">
-            <header>
-                <a href='/'>
-                    <h1><strong>y</strong><span>michael</span></h1>
-                </a>
-            </header>
-            <nav>
-                <ul>
-                    <li class='navlink'><a href="{{ page.baseurl }}/about.html">about</a></li>
-                    <li class='navlink'><a href="{{ page.baseurl }}/posts.html">posts</a></li>
-                    <li class='navlink'><a href="{{ page.baseurl }}/projects.html">projects</a></li>
-                    <li class='navlink'><a href="mailto:wrong92@gmail.com">say hi</a></li>
-                </ul>
-            </nav>
-            <div role="main">{{ content }}</div>
+            {% if page.ispost %}
+                <nav>
+                    <ul>
+                        <li class='navlink'><a href='{{ page.baseurl }}/'>~/</a></li>
+                        <li class='navlink'><a href="{{ page.baseurl }}/posts.html">posts</a></li>
+                        <li class='navlink'><a href="{{ page.baseurl }}/projects.html">projects</a></li>
+                        <li class='navlink'><a href="mailto:wrong92@gmail.com">say hi</a></li>
+                    </ul>
+                </nav>
+                <div role="main">{{ content }}</div>
+            {% else %}
+                <header>
+                    <a href='{{ page.baseurl }}/'>
+                        <h1><strong>y</strong><span>michael</span></h1>
+                    </a>
+                </header>
+                <nav>
+                    <ul>
+                        <li class='navlink'><a href="{{ page.baseurl }}/about.html">about</a></li>
+                        <li class='navlink'><a href="{{ page.baseurl }}/posts.html">posts</a></li>
+                        <li class='navlink'><a href="{{ page.baseurl }}/projects.html">projects</a></li>
+                        <li class='navlink'><a href="mailto:wrong92@gmail.com">say hi</a></li>
+                    </ul>
+                </nav>
+                <div role="main" class='static_content'>{{ content }}</div>
+            {% endif %}
             <footer>
                 <a href="https://github.com/ymichael" target="_blank">
                     <div class="icon github"></div>
