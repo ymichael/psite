@@ -4,8 +4,9 @@ title: ymichael
 page: about
 ---
 
-testing gh pages.
-{{ page.baseurl}}
+testing gh pages 1
+{{ site.baseurl }}
+{{ page.baseurl }}
 
 Hi there, I'm michael. I'm a junior pursuing an undergraduate degree in Computer Science at the National University of Singapore (NUS).
 
