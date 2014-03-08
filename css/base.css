@@ -1,7 +1,7 @@
 html, body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
-  color: #777;
+  color: #555;
 }
 
 .container {
@@ -127,7 +127,7 @@ footer {
 .post time {
   display: block;
   font-size: 0.9em;
-  color: #9EABB3;
+  color: #888;
 }
 
 .post code {
