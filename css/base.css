@@ -10,7 +10,8 @@ html, body {
 }
 
 strong {
-  font-weight: 400;
+  font-weight: 800;
+  color: #111;
 }
 
 ul {
@@ -131,6 +132,10 @@ footer {
 
 .post code {
   color: #060606;
+}
+
+.post strong {
+  font-weight: bold;
 }
 
 .post ul {

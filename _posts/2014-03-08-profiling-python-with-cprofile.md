@@ -8,31 +8,30 @@ A couple of days ago, I had an assignment for an [Information Retrieval
 class](comp.nus.edu.sg/~kanmy/courses/3245_2014/index.html)
 that basically involved:
 
-1. Indexing a large corpus __(Reuters from `nltk`)__
-2. Searching it using boolean queries __(eg. `bill AND gates`)__
+1. Indexing a large corpus _(Reuters from `nltk`)_
+2. Searching it using boolean queries _(eg. `bill AND gates`)_
 
 For the second part of the of the assignment, performance was pretty important.
 Since we would want to return results for the user's queries quickly.
 
-_This blogpost is basically about how I used python's cProfile to
-identify and fix bottlenecks/slow parts in my code._ Most of these bottlenecks
+__This blogpost is basically about how I used python's cProfile to
+identify and fix bottlenecks/slow parts in my code.__ Most of these bottlenecks
 would have been hard to identify without the profiler.
 <!--more-->
 
 During my internship at Quora, one of the things I worked on was POST speed
-improvements for core actions across the product. It was my first brush with
-trying to speed work and the main lesson I took away was the importance of
+improvements for core actions across the product. It was my first brush with speed work and the main lesson I took away was the importance of
 measuring and profiling before attempting to optimise.
 
 > "Bottlenecks occur ins surprising places, so don't try to second guess and put in a speed hack until you have proven that's where the bottleneck is." - Rob Pike
 
 ## Measure
-After getting a working submission out. I proceeded to measure my code. Since
+After getting a working submission out. I proceeded to measure/benchmark my code. Since
 this program was meant to run as a script from the command line, I used the
-simple `time` commandline tool to roughly benchmark how fast my code was.
+simple `time` command-line tool to roughly benchmark how fast my code was.
 
 {% highlight bash %}
-time python search.py
+$ time python search.py
 # real    0m1.521s
 # user    0m1.250s
 # sys     0m0.142s
@@ -40,25 +39,23 @@ time python search.py
 
 
 ## Profile
-Once I was happy with the measurement, proceeded to profile my code using
-cProfile.
+Once I was happy with the measurement, I proceeded to profile my code using `cProfile`.
 
 {% highlight bash %}
-python -m cProfile -o profile_output search.py
+$ python -m cProfile -o profile_output search.py
 {% endhighlight %}
 
 
 The `-o` flag basically specifies an output filename for cProfile to write its
 output to. (Without which, it'll simply spit out the stats to the stdout, which
-is undesirable since we'd be unable to sort/drill down into specific function.)
+is undesirable since we'd be unable to sort/drill down into specific functions.)
 
 ## Making sense of the cProfile output
 
 The cProfile output is a basically binary file that contains the following
 information:
 
-For each function called in the python program:
-
+_(For each function called in the python program)_
 - How long each call took (percall, inclusive and exclusive)
 - How many times it was called (ncalls)
 - How long it took (cumtime: includes the times of other functions it calls)
@@ -66,10 +63,10 @@ For each function called in the python program:
 - What functions it called (callers)
 - What functions called it (callees)
 
-_If you didn't specify the output, you'll basically only get a dump of the
+__If you didn't specify the output, you'll basically only get a dump of the
 information without the caller/callees part. (Which is quite helpful in making
 sense of everything). You'd also lose the ability to dynamically re-sort the
-information based on your preferred metric (unless you re-profile it with a `-s` flag (I think))._
+information based on your preferred metric (unless you re-profile it with a `-s` flag (I think)).__
 
 ### Reading the cProfile binary output file
 
@@ -77,12 +74,12 @@ In order to read this binary file, python provides a pstats.Stats class that
 happily spits out the various infomation for you in a python shell (when called
 with the relevant methods).
 
-I found this rather tedious and googling around for an easier way to read this
-binary file yield nothing. I wanted a simple way to:
+I found this rather tedious and [googling](http://blog.ludovf.net/python-profiling-cprofile/) [around](http://pymotw.com/2/profile/) for an easier way to read this
+binary file yield nothing. I just wanted a simple way to:
 
-1. See the information
-2. Sort with a single click
-3. Drill down to functions with a single click
+1. See all the information
+2. Sort them with a single click
+3. Drill down to functions (and their callers and callees) with a single click
 
 _(These as oppose to manually calling methods on the Stats object each time.)_
 
@@ -118,8 +115,7 @@ The top line stood out to me. The function `not_operation` was taking a
 suspiciously long time.
 
 Clicking into the `not_operation` showed that the functions it was calling were
-not taking a lot of time. (Implying that the slowness was due to some code
-within the function itself.)
+not taking a lot of time. __(Implying that the slowness was due to some code within the function itself.)__
 
 ![cprofilev3-not-operation]({{ site.url }}/img/blog/cprofilev3-not-operation.png)
 
@@ -138,7 +134,7 @@ def not_operation(operand, dictionary, pfile):
 {% endhighlight %}
 
 So it turns out that the list comprehension in the function was basically really
-inefficient. It became super obvious once I narrowed down that `not_operation`
+__inefficient__. It became super obvious once I narrowed down that `not_operation`
 was slow.
 
 ### Optimise/Fix ineffient code
@@ -207,7 +203,7 @@ This time though, the most of the time seemed to be spent in the
 
 ![cprofilev5-bool-operation]({{ site.url }}/img/blog/cprofilev5-bool-operation.png)
 
-In particular, I seemed to be doing 200k `len` operations and 115 `append`
+In particular, I seemed to be doing ~200k `len` operations and ~115 `append`
 operations on some list objects.
 
 This seemed like a red-flag so I took a closer look at the
@@ -237,6 +233,4 @@ time python search.py
 _Woot! Got it to run under a second!_
 
 ## Summary
-Overall, I'm pretty happy with the performance gain I got. I did a couple more
-that I didn't cover here (some other boolean operations were performing poorly
-under other testcases). Its a pretty cool feeling to methodically find bottlenecks and fix them.
+Overall, I'm pretty happy with the performance gain I got. I did a couple more that I didn't cover here (some other boolean operations were performing poorly under other testcases). Its a pretty cool feeling to methodically find bottlenecks and fix them.

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>ymichael</title>
         <meta name="viewport" content="width=device-width">
-        <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,400" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,400,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/css/base.css">
         <link rel="stylesheet" href="/css/syntax.css">
 
@@ -49,14 +49,14 @@
                     <p>A couple of days ago, I had an assignment for an <a href='comp.nus.edu.sg/~kanmy/courses/3245_2014/index.html'>Information Retrieval class</a> that basically involved:</p>
 
 <ol>
-<li>Indexing a large corpus <strong>(Reuters from <code>nltk</code>)</strong></li>
+<li>Indexing a large corpus <em>(Reuters from <code>nltk</code>)</em></li>
 
-<li>Searching it using boolean queries <strong>(eg. <code>bill AND gates</code>)</strong></li>
+<li>Searching it using boolean queries <em>(eg. <code>bill AND gates</code>)</em></li>
 </ol>
 
 <p>For the second part of the of the assignment, performance was pretty important. Since we would want to return results for the user&#8217;s queries quickly.</p>
 
-<p><em>This blogpost is basically about how I used python&#8217;s cProfile to identify and fix bottlenecks/slow parts in my code.</em> Most of these bottlenecks would have been hard to identify without the profiler. 
+<p><strong>This blogpost is basically about how I used python&#8217;s cProfile to identify and fix bottlenecks/slow parts in my code.</strong> Most of these bottlenecks would have been hard to identify without the profiler. 
                     <a href='/2014/03/08/profiling-python-with-cprofile.html' itemprop="url" class='readmore'>Read More...</a>
                 
             </section>

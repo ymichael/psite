@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Profiling python wth cProfile</title>
         <meta name="viewport" content="width=device-width">
-        <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,400" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,400,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/css/base.css">
         <link rel="stylesheet" href="/css/syntax.css">
 
@@ -43,16 +43,16 @@ that basically involved:
     <section><p>A couple of days ago, I had an assignment for an <a href='comp.nus.edu.sg/~kanmy/courses/3245_2014/index.html'>Information Retrieval class</a> that basically involved:</p>
 
 <ol>
-<li>Indexing a large corpus <strong>(Reuters from <code>nltk</code>)</strong></li>
+<li>Indexing a large corpus <em>(Reuters from <code>nltk</code>)</em></li>
 
-<li>Searching it using boolean queries <strong>(eg. <code>bill AND gates</code>)</strong></li>
+<li>Searching it using boolean queries <em>(eg. <code>bill AND gates</code>)</em></li>
 </ol>
 
 <p>For the second part of the of the assignment, performance was pretty important. Since we would want to return results for the user&#8217;s queries quickly.</p>
 
-<p><em>This blogpost is basically about how I used python&#8217;s cProfile to identify and fix bottlenecks/slow parts in my code.</em> Most of these bottlenecks would have been hard to identify without the profiler. <!--more--></p>
+<p><strong>This blogpost is basically about how I used python&#8217;s cProfile to identify and fix bottlenecks/slow parts in my code.</strong> Most of these bottlenecks would have been hard to identify without the profiler. <!--more--></p>
 
-<p>During my internship at Quora, one of the things I worked on was POST speed improvements for core actions across the product. It was my first brush with trying to speed work and the main lesson I took away was the importance of measuring and profiling before attempting to optimise.</p>
+<p>During my internship at Quora, one of the things I worked on was POST speed improvements for core actions across the product. It was my first brush with speed work and the main lesson I took away was the importance of measuring and profiling before attempting to optimise.</p>
 
 <blockquote>
 <p>&#8220;Bottlenecks occur ins surprising places, so don&#8217;t try to second guess and put in a speed hack until you have proven that&#8217;s where the bottleneck is.&#8221; - Rob Pike</p>
@@ -60,24 +60,24 @@ that basically involved:
 
 <h2 id='measure'>Measure</h2>
 
-<p>After getting a working submission out. I proceeded to measure my code. Since this program was meant to run as a script from the command line, I used the simple <code>time</code> commandline tool to roughly benchmark how fast my code was.</p>
-<div class='highlight'><pre><code class='bash'><span class='nb'>time </span>python search.py
+<p>After getting a working submission out. I proceeded to measure/benchmark my code. Since this program was meant to run as a script from the command line, I used the simple <code>time</code> command-line tool to roughly benchmark how fast my code was.</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span><span class='nb'>time </span>python search.py
 <span class='c'># real    0m1.521s</span>
 <span class='c'># user    0m1.250s</span>
 <span class='c'># sys     0m0.142s</span>
 </code></pre></div>
 <h2 id='profile'>Profile</h2>
 
-<p>Once I was happy with the measurement, proceeded to profile my code using cProfile.</p>
-<div class='highlight'><pre><code class='bash'>python -m cProfile -o profile_output search.py
+<p>Once I was happy with the measurement, I proceeded to profile my code using <code>cProfile</code>.</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>python -m cProfile -o profile_output search.py
 </code></pre></div>
-<p>The <code>-o</code> flag basically specifies an output filename for cProfile to write its output to. (Without which, it&#8217;ll simply spit out the stats to the stdout, which is undesirable since we&#8217;d be unable to sort/drill down into specific function.)</p>
+<p>The <code>-o</code> flag basically specifies an output filename for cProfile to write its output to. (Without which, it&#8217;ll simply spit out the stats to the stdout, which is undesirable since we&#8217;d be unable to sort/drill down into specific functions.)</p>
 
 <h2 id='making_sense_of_the_cprofile_output'>Making sense of the cProfile output</h2>
 
 <p>The cProfile output is a basically binary file that contains the following information:</p>
 
-<p>For each function called in the python program:</p>
+<p><em>(For each function called in the python program)</em></p>
 
 <ul>
 <li>How long each call took (percall, inclusive and exclusive)</li>
@@ -93,20 +93,20 @@ that basically involved:
 <li>What functions called it (callees)</li>
 </ul>
 
-<p><em>If you didn&#8217;t specify the output, you&#8217;ll basically only get a dump of the information without the caller/callees part. (Which is quite helpful in making sense of everything). You&#8217;d also lose the ability to dynamically re-sort the information based on your preferred metric (unless you re-profile it with a <code>-s</code> flag (I think)).</em></p>
+<p><strong>If you didn&#8217;t specify the output, you&#8217;ll basically only get a dump of the information without the caller/callees part. (Which is quite helpful in making sense of everything). You&#8217;d also lose the ability to dynamically re-sort the information based on your preferred metric (unless you re-profile it with a <code>-s</code> flag (I think)).</strong></p>
 
 <h3 id='reading_the_cprofile_binary_output_file'>Reading the cProfile binary output file</h3>
 
 <p>In order to read this binary file, python provides a pstats.Stats class that happily spits out the various infomation for you in a python shell (when called with the relevant methods).</p>
 
-<p>I found this rather tedious and googling around for an easier way to read this binary file yield nothing. I wanted a simple way to:</p>
+<p>I found this rather tedious and <a href='http://blog.ludovf.net/python-profiling-cprofile/'>googling</a> <a href='http://pymotw.com/2/profile/'>around</a> for an easier way to read this binary file yield nothing. I just wanted a simple way to:</p>
 
 <ol>
-<li>See the information</li>
+<li>See all the information</li>
 
-<li>Sort with a single click</li>
+<li>Sort them with a single click</li>
 
-<li>Drill down to functions with a single click</li>
+<li>Drill down to functions (and their callers and callees) with a single click</li>
 </ol>
 
 <p><em>(These as oppose to manually calling methods on the Stats object each time.)</em></p>
@@ -140,7 +140,7 @@ that basically involved:
 
 <p>The top line stood out to me. The function <code>not_operation</code> was taking a suspiciously long time.</p>
 
-<p>Clicking into the <code>not_operation</code> showed that the functions it was calling were not taking a lot of time. (Implying that the slowness was due to some code within the function itself.)</p>
+<p>Clicking into the <code>not_operation</code> showed that the functions it was calling were not taking a lot of time. <strong>(Implying that the slowness was due to some code within the function itself.)</strong></p>
 
 <p><img alt='cprofilev3-not-operation' src='/img/blog/cprofilev3-not-operation.png' /></p>
 <div class='highlight'><pre><code class='python'><span class='c'># line 76 of search_index.py</span>
@@ -155,7 +155,7 @@ that basically involved:
 
     <span class='k'>return</span> <span class='p'>[</span><span class='n'>doc</span> <span class='k'>for</span> <span class='n'>doc</span> <span class='ow'>in</span> <span class='n'>all_docs</span> <span class='k'>if</span> <span class='n'>doc</span> <span class='ow'>not</span> <span class='ow'>in</span> <span class='n'>results</span><span class='p'>]</span>
 </code></pre></div>
-<p>So it turns out that the list comprehension in the function was basically really inefficient. It became super obvious once I narrowed down that <code>not_operation</code> was slow.</p>
+<p>So it turns out that the list comprehension in the function was basically really <strong>inefficient</strong>. It became super obvious once I narrowed down that <code>not_operation</code> was slow.</p>
 
 <h3 id='optimisefix_ineffient_code'>Optimise/Fix ineffient code</h3>
 
@@ -216,7 +216,7 @@ that basically involved:
 
 <p><img alt='cprofilev5-bool-operation' src='/img/blog/cprofilev5-bool-operation.png' /></p>
 
-<p>In particular, I seemed to be doing 200k <code>len</code> operations and 115 <code>append</code> operations on some list objects.</p>
+<p>In particular, I seemed to be doing ~200k <code>len</code> operations and ~115 <code>append</code> operations on some list objects.</p>
 
 <p>This seemed like a red-flag so I took a closer look at the <code>list_a_and_not_list_b</code> function.</p>
 
