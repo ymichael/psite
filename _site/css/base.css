@@ -98,6 +98,7 @@ footer {
 .static_content,
 .post p,
 #disqus_thread,
+.post img,
 .post blockquote {
   max-width: 500px;
 }
@@ -142,12 +143,4 @@ footer {
   padding: 0.6em;
   white-space: pre-wrap;
   word-wrap: break-word;
-}
-
-/**
- * Post page
- **/
-.post img {
-  max-width: 500px;
-  display: block;
 }
