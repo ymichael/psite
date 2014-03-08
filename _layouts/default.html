@@ -6,7 +6,7 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
         <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,400" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{{ page.url }}/css/base.css">
+        <link rel="stylesheet" href="{{ page.baseurl }}/css/base.css">
 
     </head>
     <body itemscope itemtype="http://schema.org/WebPage">
@@ -18,9 +18,9 @@
             </header>
             <nav>
                 <ul>
-                    <li class='navlink'><a href="/about.html">about</a></li>
-                    <li class='navlink'><a href="/posts.html">posts</a></li>
-                    <li class='navlink'><a href="/projects.html">projects</a></li>
+                    <li class='navlink'><a href="{{ page.baseurl }}/about.html">about</a></li>
+                    <li class='navlink'><a href="{{ page.baseurl }}/posts.html">posts</a></li>
+                    <li class='navlink'><a href="{{ page.baseurl }}/projects.html">projects</a></li>
                     <li class='navlink'><a href="mailto:wrong92@gmail.com">say hi</a></li>
                 </ul>
             </nav>
