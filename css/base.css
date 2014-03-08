@@ -98,9 +98,13 @@ footer {
 .static_content,
 .post p,
 #disqus_thread,
-.post img,
 .post blockquote {
   max-width: 500px;
+}
+
+.post img {
+  max-height: 400px;
+  max-width: 95%;
 }
 
 
