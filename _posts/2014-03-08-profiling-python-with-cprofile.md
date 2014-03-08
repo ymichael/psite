@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Profiling python wth cProfile"
+title:  "Profiling python with cProfile"
 date:   2014-03-08
 ---
 
