@@ -11,7 +11,7 @@ html, body {
 }
 
 strong {
-  font-weight: 400 
+  font-weight: 400;
 }
 
 ul {
@@ -40,7 +40,7 @@ a {
 }
 
 nav li {
-  display: inline-block; 
+  display: inline-block;
 }
 
 footer {
@@ -79,6 +79,9 @@ footer {
 }
 
 
+/**
+ * List of posts
+ **/
 li .post {
   margin: 15px 0;
 }
@@ -90,4 +93,14 @@ li .post a {
 li time {
   display: block;
   font-size: 0.9em;
+}
+
+
+/**
+ * Post page
+ **/
+.post img {
+  max-height: 300px;
+  display: block;
+  margin: auto;
 }
