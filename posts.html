@@ -13,7 +13,7 @@ page: home
                     {{ post.date | date: "%-d %B %Y" }}
                 </time>
                 <h1 itemprop="name" class="post_title">
-                    <a href='{{ site.baseurl }}{{ post.url }}' itemprop="url">
+                    <a href='{{ post.url }}' itemprop="url">
                         {{ post.title }}
                     </a>
                 </h1>
@@ -21,7 +21,7 @@ page: home
             <section>
                 {% if post.content contains '<!--more-->' %}
                     {{ post.content | split:'<!--more-->' | first }}
-                    <a href='{{ site.baseurl }}{{ post.url }}' itemprop="url" class='readmore'>Read More...</a>
+                    <a href='{{ post.url }}' itemprop="url" class='readmore'>Read More...</a>
                 {% else %}
                     {{ post.content }}
                 {% endif %}
