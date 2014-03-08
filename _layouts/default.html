@@ -9,6 +9,14 @@
         <link rel="stylesheet" href="/css/base.css">
         <link rel="stylesheet" href="/css/syntax.css">
 
+
+        <!-- facebook meta tags -->
+        {% if page.ispost %}
+            <meta property="og:title" content="{{ page.title }}"/>
+            <meta property="og:site_name" content="ymichael"/>
+            <meta property="og:description" content="{{ page.excerpt | strip_html }}"/>
+        {% endif %}
+
     </head>
     <body itemscope itemtype="http://schema.org/WebPage">
         <div class="container">
