@@ -5,7 +5,7 @@ date:   2014-03-08
 ---
 
 A couple of days ago, I had an assignment for an [Information Retrieval
-class](comp.nus.edu.sg/~kanmy/courses/3245_2014/index.html)
+class](//www.comp.nus.edu.sg/~kanmy/courses/3245_2014/index.html)
 that basically involved:
 
 1. Indexing a large corpus _(Reuters from `nltk`)_
@@ -20,7 +20,8 @@ would have been hard to identify without the profiler.
 <!--more-->
 
 During my internship at Quora, one of the things I worked on was POST speed
-improvements for core actions across the product. It was my first brush with speed work and the main lesson I took away was the importance of
+improvements for core actions across the product. It was my first brush with 
+speed work and the main lesson I took away was the importance of
 measuring and profiling before attempting to optimise.
 
 > "Bottlenecks occur ins surprising places, so don't try to second guess and put in a speed hack until you have proven that's where the bottleneck is." - Rob Pike
