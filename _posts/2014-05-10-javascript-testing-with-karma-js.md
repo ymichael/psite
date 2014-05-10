@@ -20,6 +20,7 @@ Basically, you writing your tests using your favorite testing framework
 
 Karma.js runs tests in your browser(s), from your command-line.
 If this doesn't sound cool yet, it will in a bit. Hopefully.
+<!--more-->
 
 # Pre-requsites
 You need to have `nodejs` and `npm` installed on your machine. If you don't, it

@@ -12,3 +12,40 @@ ispost: true
     </header>
     <section>{{ content }}</section>
 </article>
+
+<br/>
+<br/>
+<div id='disqus_thread'>
+	<a href="#disqus_thread">Comments</a>
+	&middot;
+	<a href="http://disqus.com" class="dsq-brlink">Powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script type="text/javascript">
+var disqus_shortname = 'ymichael';
+var disqus_identifier = '{{ page.id }}';
+var disqus_title = '{{ page.title }}';
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+
+var commentLink = document.querySelector('#disqus_thread');
+var once = false;
+commentLink.addEventListener('click', function(e) {
+	if (once) {
+		return;
+	}
+	once = true;
+
+	(function(){
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+});
+</script>
