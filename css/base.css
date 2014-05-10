@@ -43,6 +43,10 @@ h1, h2, h3 {
   color: #000;
 }
 
+h2 {
+    font-size: 19px;
+}
+
 a {
   color: #000;
   text-decoration: none;
