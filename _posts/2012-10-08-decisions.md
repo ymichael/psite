@@ -2,6 +2,7 @@
 layout: post
 title:  "Decisions"
 date:   2012-10-08
+archive: true
 ---
 
 > how do I make decisions?

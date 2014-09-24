@@ -2,12 +2,12 @@
 layout: default
 title: ymichael
 page: home
-permalink: /posts/
+permalink: /archive/
 ---
 
 <ul>
     {% for post in site.posts %}
-        {% if post.archive == nil %}
+        {% if post.archive %}
             <li>
                 <article class='post' itemscope itemtype="http://schema.org/BlogPosting">
                     <header>
@@ -20,17 +20,8 @@ permalink: /posts/
                             </a>
                         </h1>
                     </header>
-                    <section>
-                        {% if post.content contains '<!--more-->' %}
-                            {{ post.content | split:'<!--more-->' | first }}
-                            <a href='{{ post.url }}' itemprop="url" class='readmore'>Read More...</a>
-                        {% else %}
-                            {{ post.content }}
-                        {% endif %}
-                    </section>
                 </article>
             </li>
         {% endif %}
     {% endfor %}
 </ul>
-<a class='olderposts' href="/archive">Read older posts...</a>

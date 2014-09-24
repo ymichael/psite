@@ -2,6 +2,7 @@
 layout: post
 title:  "I suck at hackathons"
 date:   2012-06-07
+archive: true
 ---
 
 I attended the recently concluded [#shdh](http://www.superhappydevhouse.sg/). It was awesome. There was great coffee, beer, food and above all, a great crowd. 

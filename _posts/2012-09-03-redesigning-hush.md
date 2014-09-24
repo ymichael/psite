@@ -2,6 +2,7 @@
 layout: post
 title:  "Redesigning Hush"
 date:   2012-09-03
+archive: true
 ---
 
 For the first project assignment, my team is building a social network. Well, not quite. Think twitter's open nature built on Facebook's social graph minus identities. 

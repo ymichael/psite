@@ -68,6 +68,11 @@ footer {
   height: 30px;
 }
 
+.olderposts {
+  font-style: italic;
+  font-size: 1.2em;
+}
+
 /**
  * List of posts
  **/
