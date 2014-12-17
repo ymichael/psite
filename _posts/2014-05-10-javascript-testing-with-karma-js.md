@@ -1,24 +1,24 @@
 ---
 layout: post
-title:  "Javascript testing with karma.js"
+title:  "Javascript testing with karma js"
 date:   2014-05-10
 ---
 
-It took me a while to start using [Karma.js][], so I figured I write about the
+It took me a while to start using [Karma js][], so I figured I write about the
 final steps I took to get it working.
 
 *I'm on osx, so your mileage may vary if you are on a different platform.*
 
 # Background
-Its not very clear from the [Karma.js][] landing page what it actually is. I
+Its not very clear from the [Karma js][] landing page what it actually is. I
 initially thought it was going to replace stuff like qunit or jasmine. Its not.
 
-__Karma.js is a test runner. It runs your tests.__
+__Karma js is a test runner. It runs your tests.__
 
 Basically, you writing your tests using your favorite testing framework
-(`mocha`, `jasmine`, `qunit` etc.) and use karma.js to run it.
+(`mocha`, `jasmine`, `qunit` etc.) and use karma js to run it.
 
-Karma.js runs tests in your browser(s), from your command-line.
+Karma js runs tests in your browser(s), from your command-line.
 If this doesn't sound cool yet, it will in a bit. Hopefully.
 <!--more-->
 
@@ -127,4 +127,4 @@ Notice that karma runs my tests in all three browsers I specified:
 
 ![karma-running](/img/blog/karma-running.png)
 
-[Karma.js]: http://karma-runner.github.io/0.12/index.html
+[Karma js]: http://karma-runner.github.io/0.12/index.html
