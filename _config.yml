@@ -1,3 +1,4 @@
 name: ymichael
 pygments: true
 markdown: kramdown
+exclude: ["node_modules"]
