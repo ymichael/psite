@@ -87,6 +87,8 @@ _(These as oppose to manually calling methods on the Stats object each time.)_
 So I wrote this: [CProfileV](https://github.com/ymichael/cprofilev). Which is
 bacially a thin wrapper for viewing python cProfile output in your browser. Yay!
 
+__[UPDATE]: cProfileV has been updated. See <https://github.com/ymichael/cprofilev> for the latest usage instructions.__
+
 {% highlight bash %}
 # Install cprofilev
 $ sudo pip install cprofilev
