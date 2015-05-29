@@ -4,7 +4,7 @@ title:  Simple Server Management with Ansible
 date:   2015-05-28
 ---
 
-Recently, I discovered [Ansible](ansible.com), a tool to remotely manage servers. I haven't used _chef_ or _puppet_ but I hear its similar but simpler. It helps, for now, to think of Ansible as simply "remote ssh commands".
+Recently, I discovered [Ansible](http://www.ansible.com/home), a tool to remotely manage servers. I haven't used _chef_ or _puppet_ but I hear its similar but simpler. It helps, for now, to think of Ansible as simply "remote ssh commands".
 
 My ansible _plays_ for server management can be found here: <https://github.com/ymichael/ansible-ubuntu-box>
 <!--more-->
