@@ -90,6 +90,7 @@ footer {
 .post h1,
 .post p,
 .post ul,
+.post li,
 #disqus_thread,
 .post blockquote {
   max-width: 500px;
