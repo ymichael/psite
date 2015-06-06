@@ -3,7 +3,7 @@ layout: post
 title:  "Some notes playing with HAProxy"
 date:   2015-06-06
 ---
-I've been meaning to try out [HAProxy](http://www.haproxy.org/), a tcp/http load balancer, for a while now. Partially because I've heard many great things about it and also because its so widely used[^1]. I first encountered HAProxy during my internship at Quora.
+I've been meaning to try out [HAProxy](http://www.haproxy.org/), a tcp/http load balancer, for a while now. Partially because I've heard many great things about it and also because of it's prevalence[^1]. I first encountered HAProxy during my internship at Quora.
 
 Last week, I finally found some time and decided to play around with it. This post is about some interesting things came up.
 <!--more-->
@@ -62,13 +62,13 @@ To summarise, being able to specify and tune a different `maxconn` for HAProxy a
 
 ## 2. Handling WebSockets
 
-While limiting the maximum number of connections per backend is great for guaranteeing a certain level of performance, I started to wonder about how HAProxy would handle WebSocket connections.
+While limiting the maximum number of connections per backend is great for guaranteeing a certain level of performance, I started to wonder how HAProxy would handle WebSocket connections.
 
-WebSockets[^4], unlike normal HTTP requests, provide a bi-directional link between the client and server and are long lived. WebSocket connections typically last for a much longer time and thus the `maxconn` value for the backends handling WebSocket requests essentially dictate the number of active WebSocket connections we can handle.
+WebSockets[^4], unlike normal HTTP requests, provide a bi-directional link between the client and server and are long-lived. WebSocket connections typically last for a much longer time and thus the `maxconn` value for the backends handling WebSocket requests essentially dictate the number of active WebSocket connections we can handle.
 
 As a consequence, you probably want to use a different group of servers to handle normal HTTP trafic and WebSocket traffic so that you can set a reasonable `maxconn` value for each group. Fortunately, HAProxy makes this super easy[^5].
 
-As an example, we could instruct HAProxy to send traffic to a diffent group of servers if the path begins with `/websockets`.
+As an example, we could instruct HAProxy to send traffic to a different group of servers if the path begins with `/websockets`.
 
 {% highlight text %}
 frontend public
@@ -92,17 +92,19 @@ Additionally, HAProxy has several `timeout` parameters that dictate if a connect
 
 Image Source: <http://blog.haproxy.com/2012/11/07/websockets-load-balancing-with-haproxy/>
 
-So to make WebSockets work, we need to set a sensible `timeout tunnel` value so that HAProxy doesn't prematurely terminate the connection simply because its idle. The article mentioned selected `3600s` as its `timeout tunnel`. __Do note that this timeout is reset each time a message is sent (in either direction), so the connection is only terminated if its been truly idle after the amount of time specified by this value.__
+So to make WebSockets work, we need to set a sensible `timeout tunnel` value so that HAProxy doesn't prematurely terminate the connection simply because its idle. The article mentioned selected `3600s` as its `timeout tunnel`.
+
+__Do note that this timeout is reset each time a message is sent (in either direction), so the connection is only terminated if its been truly idle after the amount of time specified by this value.__
 
 ## 3. (Ephemeral) Port Exhaustion
 
-Digging a little deeper into concurrent, long-lived connections using HAProxy, I found an interesting blog post about how ["Stack Exchange gets the most out of HAProxy."](http://brokenhaze.com/blog/2014/03/25/how-stack-exchange-gets-the-most-out-of-haproxy/). The entire post covers a great deal of detail about Stack Exchange's HAProxy config file (and is definitely worth a read) but one thing stood out to me:
+Digging a little deeper into concurrent, long-lived connections using HAProxy, I found an interesting blog post about how ["Stack Exchange gets the most out of HAProxy."](http://brokenhaze.com/blog/2014/03/25/how-stack-exchange-gets-the-most-out-of-haproxy/). The entire post covers a great deal of detail about Stack Exchange's HAProxy config file (and is definitely worth a read) but one thing stood out:
 
 > "We ran into something called source port exhaustion. The quick story is that you can only have ~65k ip:port to ip:port connections."
 
 This was the first time I've heard the term "Source Port Exhaustion" and while I knew, from my Networks class, that there are ~65k port numbers, it never occured to me that this would happen. It also turns out that you probably have less than 65k ports[^6] to use and this is something that can be configured _(more on this later)_.
 
-Furthermore, it's not just that there aren't enough "ip:port" (sourc ports) to connect from HAProxy to the backends, it's that the TCP sockets aren't being recycled/reused fast enough when connections are closed.
+Furthermore, it's not just that there aren't enough "ip:port" (source ports) to connect from HAProxy to the backends, it's that the TCP sockets aren't being recycled/reused fast enough when connections are closed.
 
 > Due to the way TCP/IP works, connections can not be closed immediately. Packets may arrive out of order or be retransmitted after the connection has been closed.
 >
