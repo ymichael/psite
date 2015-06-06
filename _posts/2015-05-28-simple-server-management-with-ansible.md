@@ -89,4 +89,6 @@ I've also found [ansible-galaxy](https://galaxy.ansible.com/) to be a rich sourc
 
 <br>
 
+## Footnotes
+
 [^1]: I use Digital Ocean and its awesome. My referral link: <https://www.digitalocean.com/?refcode=94be0d6caba4>.
