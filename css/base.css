@@ -20,6 +20,11 @@ ul {
   margin: 0;
 }
 
+sup {
+  font-weight: bold;
+  padding: 0 2px;
+}
+
 blockquote {
   padding-left: 30px;
   margin-left: 0;
