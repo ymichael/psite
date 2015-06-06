@@ -4,7 +4,7 @@ title:  Simple Server Management with Ansible
 date:   2015-05-28
 ---
 
-Recently, I discovered [Ansible](ansible.com), a tool to remotely manage servers. I haven't used _chef_ or _puppet_ but I hear its similar but simpler. It helps, for now, to think of Ansible as simply "remote ssh commands".
+Recently, I discovered [Ansible](http://www.ansible.com/home), a tool to remotely manage servers. I haven't used _chef_ or _puppet_ but I hear its similar but simpler. It helps, for now, to think of Ansible as simply "remote ssh commands".
 
 My ansible _plays_ for server management can be found here: <https://github.com/ymichael/ansible-ubuntu-box>
 <!--more-->
@@ -65,7 +65,7 @@ Ansible plays are written in [YAML](http://yaml.org/) and super readable. You do
 
 ## The host file
 
-A __hosts__ file in ansible simply tells it which servers to talk to. _This file is a simple ini file (so you can apply labels and group servers)._ 
+A __hosts__ file in ansible simply tells it which servers to talk to. _This file is a simple ini file (so you can apply labels and group servers)._
 
 For starts you can simply put the ip address of the server on the first line of the file.
 
