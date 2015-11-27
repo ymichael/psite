@@ -4,9 +4,7 @@ title: ymichael
 page: about
 ---
 
-Hi there, I'm michael. I'm a senior pursuing an undergraduate degree in Computer Science at the National University of Singapore (NUS).
-
-Previously, I interned twice at Google on the Docs team. I also did a Software Engineering internship at Quora. I used to run [NUS Hackers][], started [hackerschool][] and [project intern][].
+Hi there, I'm michael. I'm a software engineer at Quora. Previously, I interned twice at Google on the Docs team. I also interned at Quora a while back. I used to run [NUS Hackers][], started [hackerschool][] and [project intern][].
 
 You can find me on [Github][], [Twitter][] and [Quora][].
 
