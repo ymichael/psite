@@ -1,5 +1,5 @@
 name: ymichael
-pygments: true
+highlighter: rouge
 markdown: kramdown
 url: https://ymichael.com
 exclude: ["node_modules"]
