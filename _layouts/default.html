@@ -10,7 +10,7 @@
         <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 
         <!-- facebook meta tags -->
-        {% if page.ispost %}
+        {% if page.layout == 'post' %}
             <meta property="og:title" content="{{ page.title }}"/>
             <meta property="og:site_name" content="ymichael"/>
             <meta property="og:description" content="{{ page.excerpt | strip_html }}"/>
@@ -19,12 +19,11 @@
     </head>
     <body itemscope itemtype="http://schema.org/WebPage">
         <div class="container">
-            {% if page.ispost %}
+            {% if page.layout == 'post' %}
                 <nav>
                     <ul>
                         <li class='navlink'><a href='/'>~/</a></li>
                         <li class='navlink'><a href="/posts">posts</a></li>
-                        <!-- <li class='navlink'><a href="/projects.html">projects</a></li> -->
                         <li class='navlink'><a target="_blank" href="mailto:wrong92@gmail.com">say hi</a></li>
                     </ul>
                 </nav>
@@ -39,7 +38,6 @@
                     <ul>
                         <li class='navlink'><a href="/posts">posts</a></li>
                         <li class='navlink'><a href="/cal">calendar</a></li>
-                        <!-- <li class='navlink'><a href="/projects.html">projects</a></li> -->
                         <li class='navlink'><a target="_blank" href="mailto:wrong92@gmail.com">say hi</a></li>
                     </ul>
                 </nav>

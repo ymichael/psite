@@ -8,28 +8,9 @@
         <link href="//fonts.googleapis.com/css?family=Josefin+Sans:400,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/css/all.css">
         <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
-
-        <!-- facebook meta tags -->
-        {% if page.ispost %}
-            <meta property="og:title" content="{{ page.title }}"/>
-            <meta property="og:site_name" content="ymichael"/>
-            <meta property="og:description" content="{{ page.excerpt | strip_html }}"/>
-        {% endif %}
-
     </head>
     <body itemscope itemtype="http://schema.org/WebPage">
         <div class="container">
-            {% if page.ispost %}
-                <nav>
-                    <ul>
-                        <li class='navlink'><a href='/'>~/</a></li>
-                        <li class='navlink'><a href="/posts">posts</a></li>
-                        <!-- <li class='navlink'><a href="/projects.html">projects</a></li> -->
-                        <li class='navlink'><a target="_blank" href="mailto:wrong92@gmail.com">say hi</a></li>
-                    </ul>
-                </nav>
-                <div role="main">{{ content }}</div>
-            {% else %}
                 <header>
                     <a href='/'>
                         <h1><strong>y</strong><span>michael</span></h1>
@@ -39,7 +20,6 @@
                     <ul>
                         <li class='navlink'><a href="/posts">posts</a></li>
                         <li class='navlink'><a href="/cal">calendar</a></li>
-                        <!-- <li class='navlink'><a href="/projects.html">projects</a></li> -->
                         <li class='navlink'><a target="_blank" href="mailto:wrong92@gmail.com">say hi</a></li>
                     </ul>
                 </nav>
