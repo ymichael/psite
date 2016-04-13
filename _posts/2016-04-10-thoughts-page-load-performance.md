@@ -38,14 +38,14 @@ Two things you probably should care about for a page load are:
 Its hard to underscore just how important executing well on these two things
 are. _You've already gone through the trouble of building a really great product
 that people want to see/use. The countless hours of engineering/ranking/pixel
-pushing is all for nought if the users leaves before viewing any of it._
+pushing is all for nought if the user leaves before viewing any of it._
 
-Before 1, your users are just staring at a loading spinner and a blank page -
-making this a particularly important period of time, standing between users and
-the content they care about _(which is why they are visiting your site in the
-first place)_. This is the basis for the term 'Critical Render Path'. There are
-a lot of resources on how to optimize it and this is exactly what it does:
-reducing the time between users and your site's content.
+__Before 1, your users are just staring at a loading spinner and a blank page__ -
+making this a particularly important period of time that stands between your
+users and the content they care about _(which is why they are visiting your site
+in the first place)_. This is the basis for the term 'Critical Render Path'.
+There are a lot of resources on how to optimize it and this is exactly what it
+does: reducing the time between users and your site's content.
 
 > Optimizing the critical rendering path refers to prioritizing the display of
 > content that relates to the current user action.[^5]
@@ -53,13 +53,13 @@ reducing the time between users and your site's content.
 __After 1 and before 2, users can see your content but are unable to interact
 with your site__. They can't perform any actions on your site (like leave a
 comment, read more etc). I think about the relationship between these two
-different things as - The first makes sure that users stick around long enough
+different things as: The first makes sure that users stick around long enough
 to matter.  The second ensures that users have a good experience quickly and are
 able to perform actions they/you care about.
 
 For both these things, we want to:
-1. Track it as a metric effectively
-2. Understand what actually blocks it from happening sooner
+1. Track it as a metric effectively.
+2. Understand what actually blocks it from happening sooner.
 3. Diagnose, investigate and fix and relevant blockers.
 
 ## Understanding page loads
@@ -96,7 +96,7 @@ the slowness or waiting time.
 Oh yea, if you use web fonts. There's that too[^7]. Browsers don't like
 prefetching fonts until they realise they actually need it. They also dislike
 rendering system fonts while waiting and requesting for your fancy web font[^8],
-leading to more time before users see your content.
+leading to more time before users see your content.[^18]
 
 I left out where most of the navigation timing events fire in the list above -
 things like DOMInteractive DOMContentLoaded etc because they depend to some
@@ -256,3 +256,4 @@ good understanding of where the bottlenecks in your site actually are.
 [^15]: The early bytes of your page are premium first class HTTP seats. Make them worth your while.
 [^16]: <https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css?hl=en>
 [^17]: I spend a lot of time trying to replicate and understand these perf audits. I highly recommend giving them a go.
+[^18]: `rel=preload` cannot come fast enough: <https://www.bramstein.com/writing/preload-hints-for-web-fonts.html>
