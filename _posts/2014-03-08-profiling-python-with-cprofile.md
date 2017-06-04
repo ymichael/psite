@@ -94,7 +94,7 @@ __[UPDATE]: cProfileV has been updated. See <https://github.com/ymichael/cprofil
 $ sudo pip install cprofilev
 
 # Call it with your cprofile output
-$ cprofilev /path/to/cprofile/output
+$ cprofilev -f /path/to/cprofile/output
 
 # Navigate to http://localhost:4000
 {% endhighlight %}
