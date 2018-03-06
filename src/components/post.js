@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-export default (data) => (
+export default data => (
   <li key={data.id}>
     <article
       className="post"
@@ -9,10 +9,7 @@ export default (data) => (
       itemType="http://schema.org/BlogPosting"
     >
       <header>
-        <time
-          itemProp="datePublished"
-          dateTime="{ data.frontmatter.date }"
-        >
+        <time itemProp="datePublished" dateTime="{ data.frontmatter.date }">
           {data.frontmatter.date}
         </time>
         <h1 itemProp="name" className="post_title">

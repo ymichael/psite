@@ -1,15 +1,6 @@
 import React from 'react'
 
 class GoogleAnalytics extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = props
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState(nextProps)
-  }
-
   componentWillMount() {
     if (typeof window != 'undefined' && window.document) {
       // Google Analytics.
