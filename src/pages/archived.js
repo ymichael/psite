@@ -11,7 +11,7 @@ export default ({ data }) => {
         <title>posts | ymichael</title>
       </Helmet>
       {data.allMarkdownRemark.edges.map(({ node }, idx) => {
-        if (node.frontmatter.archive) {
+        if (!node.frontmatter.archive) {
           return null
         }
         return <Post key={idx} {...node} />
@@ -21,7 +21,7 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query PostsQuery {
+  query PostsQuery2 {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/data/post/" } }
