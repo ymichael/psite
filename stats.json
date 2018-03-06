@@ -9,8 +9,8 @@
       "path---2014-09-24-build-and-run-eclipse-java-projects-on-the-command-line-html-46ed579feced157edef3.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-b874815858e6e5cf8f5d.js",
-      "component---src-pages-index-js-b874815858e6e5cf8f5d.js.map"
+      "component---src-pages-index-js-892f1890e5a7d3102f5f.js",
+      "component---src-pages-index-js-892f1890e5a7d3102f5f.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
@@ -32,6 +32,10 @@
       "path---2015-05-28-simple-server-management-with-ansible-html-c1b526138f85149cd11c.js",
       "path---2015-05-28-simple-server-management-with-ansible-html-c1b526138f85149cd11c.js.map"
     ],
+    "component---src-pages-archived-js": [
+      "component---src-pages-archived-js-66b49e757a1c6a3c316f.js",
+      "component---src-pages-archived-js-66b49e757a1c6a3c316f.js.map"
+    ],
     "path---2014-05-10-javascript-testing-with-karma-js-html": [
       "path---2014-05-10-javascript-testing-with-karma-js-html-d925c4b358bd7d7d0a6d.js",
       "path---2014-05-10-javascript-testing-with-karma-js-html-d925c4b358bd7d7d0a6d.js.map"
@@ -45,8 +49,8 @@
       "component---src-layouts-index-js-bd42ed85c54d9cc558de.js.map"
     ],
     "path---posts": [
-      "path---posts-cab5beb1caaac4e7b9e5.js",
-      "path---posts-cab5beb1caaac4e7b9e5.js.map"
+      "path---posts-6354e355b5a949e48dc0.js",
+      "path---posts-6354e355b5a949e48dc0.js.map"
     ],
     "path---index": [
       "path---index-0eaa9ec956863f723d14.js",
@@ -61,8 +65,8 @@
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js.map"
     ],
     "commons": [
-      "commons-61689ac9f897bb0fcb2f.js",
-      "commons-61689ac9f897bb0fcb2f.js.map"
+      "commons-581f82a2f76d1a2b9848.js",
+      "commons-581f82a2f76d1a2b9848.js.map"
     ],
     "path---2012-10-08-decisions-html": [
       "path---2012-10-08-decisions-html-e0f058dd12a22d21d5d0.js",
@@ -97,9 +101,9 @@
       "path---2016-04-10-thoughts-page-load-performance-html-4a682ac100c01e01b0e5.js.map"
     ],
     "app": [
-      "app-c4fd179fee9f9080d764.js",
+      "app-515894d77dd26f849ead.js",
       "build-js-styles.css",
-      "app-c4fd179fee9f9080d764.js.map",
+      "app-515894d77dd26f849ead.js.map",
       "build-js-styles.css.map"
     ],
     "path---2012-10-01-disappointed-html": [
@@ -111,8 +115,12 @@
       "path---404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-posts-js": [
-      "component---src-pages-posts-js-46405386cdcb94adf79f.js",
-      "component---src-pages-posts-js-46405386cdcb94adf79f.js.map"
+      "component---src-pages-posts-js-0318f07fb0af3d6acc6e.js",
+      "component---src-pages-posts-js-0318f07fb0af3d6acc6e.js.map"
+    ],
+    "path---archived": [
+      "path---archived-6354e355b5a949e48dc0.js",
+      "path---archived-6354e355b5a949e48dc0.js.map"
     ],
     "path---2013-03-17-deliberately-learn-stuff-html": [
       "path---2013-03-17-deliberately-learn-stuff-html-b1ca5917f17b519aaa07.js",
