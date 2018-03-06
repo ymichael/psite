@@ -31,20 +31,20 @@ After getting a working submission out. I proceeded to measure/benchmark my code
 this program was meant to run as a script from the command line, I used the
 simple `time` command-line tool to roughly benchmark how fast my code was.
 
-{% highlight bash %}
+```bash
 $ time python search.py
 # real    0m1.521s
 # user    0m1.250s
 # sys     0m0.142s
-{% endhighlight %}
+```
 
 
 ## Profile
 Once I was happy with the measurement, I proceeded to profile my code using `cProfile`.
 
-{% highlight bash %}
+```bash
 $ python -m cProfile -o profile_output search.py
-{% endhighlight %}
+```
 
 
 The `-o` flag basically specifies an output filename for cProfile to write its
@@ -89,7 +89,7 @@ bacially a thin wrapper for viewing python cProfile output in your browser. Yay!
 
 __[UPDATE]: cProfileV has been updated. See <https://github.com/ymichael/cprofilev> for the latest usage instructions.__
 
-{% highlight bash %}
+```bash
 # Install cprofilev
 $ sudo pip install cprofilev
 
@@ -97,9 +97,9 @@ $ sudo pip install cprofilev
 $ cprofilev -f /path/to/cprofile/output
 
 # Navigate to http://localhost:4000
-{% endhighlight %}
+```
 
-![cprofilev1]({{ site.url }}/img/blog/cprofilev1.png)
+![cprofilev1](/static/img/blog/cprofilev1.png)
 
 ### Finding the bottlenecks
 
@@ -112,7 +112,7 @@ combinations. Most often, I find that the most useful sort keys are:
 
 Sorting by total time for me yielded this:
 
-![cprofilev2-tottime]({{ site.url }}/img/blog/cprofilev2-tottime.png)
+![cprofilev2-tottime](/static/img/blog/cprofilev2-tottime.png)
 
 The top line stood out to me. The function `not_operation` was taking a
 suspiciously long time.
@@ -120,9 +120,9 @@ suspiciously long time.
 Clicking into the `not_operation` showed that the functions it was calling were
 not taking a lot of time. __(Implying that the slowness was due to some code within the function itself.)__
 
-![cprofilev3-not-operation]({{ site.url }}/img/blog/cprofilev3-not-operation.png)
+![cprofilev3-not-operation](/static/img/blog/cprofilev3-not-operation.png)
 
-{% highlight python %}
+```py
 # line 76 of search_index.py
 def not_operation(operand, dictionary, pfile):
     """Performs the operation `NOT operand`."""
@@ -134,7 +134,7 @@ def not_operation(operand, dictionary, pfile):
     results = get_results(operand, dictionary, pfile, force_list=True)
 
     return [doc for doc in all_docs if doc not in results]
-{% endhighlight %}
+```
 
 So it turns out that the list comprehension in the function was basically really
 __inefficient__. It became super obvious once I narrowed down that `not_operation`
@@ -144,7 +144,7 @@ was slow.
 
 Excited to have found a possible bottleneck, I quickly implemented a fix.
 
-{% highlight python %}
+```py
 # the fix.
 def not_operation(operand, dictionary, pfile):
     """Performs the operation `NOT operand`."""
@@ -182,29 +182,29 @@ def list_a_and_not_list_b(a, b):
         idx_a += 1
 
     return results
-{% endhighlight %}
+```
 
 ## Measure again
 Measuring the time taken showed promising results. With this fix, the time taken
 dropped from roughly 1.5s to 1.15s.
 
-{% highlight bash %}
+```bash
 time python search.py
 # real    0m1.160s
 # user    0m1.018s
 # sys     0m0.133s
-{% endhighlight %}
+```
 
 Profiling the code showed that the slowness was no longer coming from
 `not_operation`.
 
-![cprofilev4-not-operation]({{ site.url }}/img/blog/cprofilev4-not-operation.png)
+![cprofilev4-not-operation](/static/img/blog/cprofilev4-not-operation.png)
 
 ## Rinse and repeat
 This time though, the most of the time seemed to be spent in the
 `list_a_and_not_list_b` operation.
 
-![cprofilev5-bool-operation]({{ site.url }}/img/blog/cprofilev5-bool-operation.png)
+![cprofilev5-bool-operation](/static/img/blog/cprofilev5-bool-operation.png)
 
 In particular, I seemed to be doing ~200k `len` operations and ~115 `append`
 operations on some list objects.
@@ -214,7 +214,7 @@ This seemed like a red-flag so I took a closer look at the
 
 It turns out that I really didn't need the while loop at the end of the function.
 
-{% highlight python %}
+```python
 # From this.
 while idx_a < len(a):
     results.append(a[idx_a])
@@ -222,16 +222,16 @@ while idx_a < len(a):
 
 # To this.
 results.extend(a[idx_a:])
-{% endhighlight %}
+```
 
 Measuring with this new change:
 
-{% highlight bash %}
+```bash
 time python search.py
 # real    0m0.895s
 # user    0m0.771s
 # sys     0m0.122s
-{% endhighlight %}
+```
 
 _Woot! Got it to run under a second!_
 

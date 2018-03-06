@@ -1,26 +1,27 @@
 {
   "name": "psite",
-  "version": "0.0.0",
-  "description": "",
-  "main": "gulpfile.js",
-  "dependencies": {},
-  "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-concat": "^2.5.2",
-    "gulp-imagemin": "^2.2.1",
-    "gulp-minify-css": "^1.1.1"
+  "description": "ymichael's personal site",
+  "version": "1.0.0",
+  "dependencies": {
+    "gatsby": "^1.9.223",
+    "gatsby-link": "^1.6.38",
+    "gatsby-plugin-react-helmet": "^2.0.6",
+    "gatsby-remark-prismjs": "^1.2.17",
+    "gatsby-source-filesystem": "^1.5.26",
+    "gatsby-transformer-remark": "^1.7.34",
+    "react-helmet": "^5.2.0",
+    "slug": "^0.9.1"
   },
+  "keywords": [],
   "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "deploy": "gatsby build && gh-pages -d public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ymichael/psite.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ymichael/psite/issues"
-  },
-  "homepage": "https://github.com/ymichael/psite"
+  "devDependencies": {
+    "gh-pages": "^1.1.0",
+    "prettier": "^1.11.1"
+  }
 }

@@ -14,11 +14,11 @@ I was afraid of being judged. That once I made something, it would define me. Mo
 
 This was what visitors would see:
 
-![worst than crappy page]({{ site.url}}/img/blog/oldsite.jpg)
+![worst than crappy page](/static/img/blog/oldsite.jpg)
 
 If a crappy personal site was bad. This just screams "I can't be bothered to write some markup, so here is something completely useless."
 
-> When you don’t create things, you become defined by your tastes rather than ability. Your tastes only narrow and exclude people. so create. <footer>- <cite>_why the Lucky Stiff</cite></footer>
+> When you don’t create things, you become defined by your tastes rather than ability. Your tastes only narrow and exclude people. so create. <div>- <cite>_why the Lucky Stiff</cite></div>
 
 So here it is. Me doing better. Me reminding myself of the joys of coding. The reasons that I started to code in the first place.
 

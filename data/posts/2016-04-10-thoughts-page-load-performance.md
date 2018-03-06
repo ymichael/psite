@@ -126,7 +126,7 @@ There's a really nice [bookmarklet](http://kaaes.github.io/timing/)[^4] that mak
 is really easy to visualize and reason about navigation timing information. It
 produces something like this:
 
-![navigation timing visualization](/img/blog/navtiming.png)
+![navigation timing visualization](/static/img/blog/navtiming.png)
 
 It breaks up the various phases of a request into network, server and browser
 which makes it really intuitive to reason about. I highly recommend giving it a
@@ -148,7 +148,7 @@ paint.
 
 Take the following filmstrip of <quora.com> as an example:
 
-![Quora film strip](/img/blog/quora-filmstrip.png)
+![Quora film strip](/static/img/blog/quora-filmstrip.png)
 
 First paint happened at 779ms but really, we care about the paint at 1.37s.
 Users care about the pain at 1.37s. I'm not sure how to go about measuring this

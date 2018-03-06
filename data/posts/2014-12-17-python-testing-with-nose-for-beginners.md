@@ -30,9 +30,9 @@ much about them.
 The setup is really easy. Just `pip` install `nose`. (easy\_install
 works too).
 
-{% highlight bash %}
+```bash
 pip install nose
-{% endhighlight %}
+```
 
 # [Nosetests][nose]
 The great thing about [`nose`][nose], is how easy it is to write and run tests.
@@ -60,7 +60,7 @@ Inside your test files, you simply import the code you're testing and test it.
 
 Here is an example:
 
-{% highlight python %}
+```py
 import model
 
 
@@ -76,7 +76,7 @@ def test_model_total_count():
 
     assert m.total_count() == (5 + 4)
     assert m.total_count(include_smoothing=False) == 5
-{% endhighlight %}
+```
 
 In the above example, I import the `model` file and test the `total_count`
 method of the `Model` object before and after incrementing the 'grams' in the
@@ -95,7 +95,7 @@ Chances are, you're writing a couple of tests in each test file that are highly
 related. `nose` makes it really easy to write `setup` and `teardown` functions
 for your tests:
 
-{% highlight python %}
+```py
 def setup():
     # setup here..
     pass
@@ -103,7 +103,7 @@ def setup():
 def teardown():
     # teardown here..
     pass
-{% endhighlight %}
+```
 
 Simply name them as such and the test runner will run the functions before and after
 each test. _(There are other acceptable variants, which I'm leaving out that will be run

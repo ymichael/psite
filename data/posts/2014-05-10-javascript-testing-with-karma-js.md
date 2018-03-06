@@ -50,7 +50,7 @@ are unfamiliar, a package.json is a file in your project's root directory that
 contains information about your project, such as what dependencies it
 requires.)*
 
-{% highlight json %}
+```json
 // package.json
 {
   "devDependencies": {
@@ -61,24 +61,24 @@ requires.)*
       "karma-jasmine": "*"
   }
 }
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```bash
 # bash
 $ npm install
-{% endhighlight %}
+```
 
 # Create a karma.conf file
 Once you've installed the necessary node modules, you need to create a karma
 configuration file.
 
-{% highlight bash %}
+```bash
 $ ./node_modules/karma/bin/karma init karma.conf.js
-{% endhighlight %}
+```
 
 Simply answer the questions accordingly.
 
-{% highlight bash %}
+```bash
 # Which testing framework do you want to use ?
 # Press tab to list possible options. Enter to move to the next question.
 > jasmine
@@ -109,7 +109,7 @@ Simply answer the questions accordingly.
 # Do you want Karma to watch all the files and run the tests on change ?
 # Press tab to list possible options.
 > yes
-{% endhighlight %}
+```
 
 This creates a karma configuration file called `karma.conf.js` in your current
 directory.
@@ -119,12 +119,12 @@ Finally, start karma in a separate window and watch it run your tests in the
 different browsers. *Karma launches the browsers if you haven't already and
 they close when you stop karma.*
 
-{% highlight bash %}
+```bash
 $ ./node_modules/karma/bin/karma start karma.conf.js
-{% endhighlight %}
+```
 
 Notice that karma runs my tests in all three browsers I specified:
 
-![karma-running](/img/blog/karma-running.png)
+![karma-running](/static/img/blog/karma-running.png)
 
 [Karma js]: http://karma-runner.github.io/0.12/index.html

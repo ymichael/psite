@@ -14,7 +14,7 @@ Before I get to the points, it helps to know what HAProxy and Load Balancing is[
 
 A simple config file would look something like this:
 
-{% highlight text %}
+```
 global
     maxconn 256
 
@@ -37,7 +37,7 @@ backend servers
     server web1 192.168.1.1:80 maxconn 32
     server web2 192.168.1.2:80 maxconn 32
     server web3 192.168.1.3:80 maxconn 32
-{% endhighlight %}
+```
 
 A large part of said _"playing"_ involved understanding the various options available and what they do.
 
@@ -70,7 +70,7 @@ As a consequence, you probably want to use a different group of servers to handl
 
 As an example, we could instruct HAProxy to send traffic to a different group of servers if the path begins with `/websockets`.
 
-{% highlight text %}
+```
 frontend public
     bind *:80
     acl is_websocket path_beg -i /websockets
@@ -82,13 +82,13 @@ backend servers
 
 backend ws
     ...
-{% endhighlight %}
+```
 
 This [article](http://blog.silverbucket.net/post/31927044856/3-ways-to-configure-haproxy-for-websockets) demonstrates several other ways to achieve this.
 
 Additionally, HAProxy has several `timeout` parameters that dictate if a connection should be closed after a period of time has elapsed. This following diagram, taken from the [HAProxy Blog](http://blog.haproxy.com/2012/11/07/websockets-load-balancing-with-haproxy/) illustrates this clearly.
 
-![HAProxy Timeouts](/img/blog/haproxytimeouts.png)
+![HAProxy Timeouts](/static/img/blog/haproxytimeouts.png)
 
 Image Source: <http://blog.haproxy.com/2012/11/07/websockets-load-balancing-with-haproxy/>
 

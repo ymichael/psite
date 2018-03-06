@@ -45,7 +45,7 @@ generated.)_
 # My project setup.
 My project structure is as follows:
 
-{% highlight bash %}
+```bash
 cs5223
   |- .classpath
   |- .project
@@ -59,42 +59,42 @@ cs5223
       |- cs5223
           |- PlayerTest.java
           |- GameTest.java
-{% endhighlight %}
+```
 
 # Building the project
 Run the following command to compile your `.java` file in `src` and put them in `bin`
 
-{% highlight bash %}
+```bash
 javac -d bin/ -cp src /path/to/java/file
-{% endhighlight %}
+```
 
  My package was called `cs5223` and I was trying to build `cs5223.Server.java`
  _(which was the entry point into my project)._
 
-{% highlight bash %}
+```bash
 javac -d bin/ -cp src src/cs5223/Server.java
-{% endhighlight %}
+```
 
 # Running the project
 Once you've compiled your `.java` files, you run them using the following command.
 
-{% highlight bash %}
+```bash
 java -cp bin JAVA_CLASS
-{% endhighlight %}
+```
 
 My `Server` class had the following fully qualified package path:
 `cs5223.Server` so I ran the following command.
 
-{% highlight bash %}
+```bash
 java -cp bin cs5223.Server
-{% endhighlight %}
+```
 
 
 # Running my junit tests
 This required downloading a [`junit` jar](https://github.com/junit-team/junit/wiki/Download-and-Install)
 which I placed in my root folder. _(Pretty sure you can avoid doing this, but this was cleaner imo)_
 
-{% highlight bash %}
+```bash
 # Building the tests.
 javac -cp junit-4.8.1.jar:src -d test/ \
     test/cs5223/GameTest.javacva \
@@ -104,7 +104,7 @@ javac -cp junit-4.8.1.jar:src -d test/ \
 java -cp test:bin:junit-4.8.1.jar orrg.junit.runner.JUnitCore \
     cs5223.GameTest \
     cs5223.PlayerTest
-{% endhighlight %}
+```
 
 _Semicolons are used to demarcate multiple paths._
 

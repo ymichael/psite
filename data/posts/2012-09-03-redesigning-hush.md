@@ -24,9 +24,9 @@ Surfing the web for more inspiration took me to `hackernews` and `lobsters`. And
 
 Here is what I came up with:
 
-![endproduct]({{site.url}}/img/blog/mainpage.jpg)
+![endproduct](/static/img/blog/mainpage.jpg)
 
-![notifications]({{site.url}}/img/blog/notifications.jpg)
+![notifications](/static/img/blog/notifications.jpg)
 
 Maybe these designs don't look nice. Maybe I'm just thinking too much about the UI. Well, my excuse is that I'm not a _designer_. But I really like how they turned out. Comments and thoughts are most welcome!
 

@@ -55,13 +55,13 @@ If you start googling/reading about Ansible, you'll see terms like _playbooks_ a
 
 Ansible plays are written in [YAML](http://yaml.org/) and super readable. You don't really need to be an expert in the language. You probably can figure out the syntax once you've seen some examples of it.
 
-{% highlight yaml %}
+```yaml
 # Example task in yaml
 # sudo apt-get upgrade
 - name: Update all packages to the latest version
   sudo: yes
   apt: upgrade=safe
-{% endhighlight %}
+```
 
 ## The host file
 
@@ -69,17 +69,17 @@ A __hosts__ file in ansible simply tells it which servers to talk to. _This file
 
 For starts you can simply put the ip address of the server on the first line of the file.
 
-{% highlight bash %}
+```bash
 $ echo NODE_IP > hosts
-{% endhighlight %}
+```
 
 ## Running plays
 
 Finally, in order to run a play, you run the following command:
 
-{% highlight bash %}
+```bash
 $ ansible-playbook -i /path/to/hosts /path/to/yaml/file
-{% endhighlight %}
+```
 
 ## Closing thoughts
 
