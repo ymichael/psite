@@ -1,0 +1,291 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/component---src-layouts-index-js-bd42ed85c54d9cc558de.js" as="script"/><link rel="preload" href="/component---src-templates-post-js-f43e60ad07d7f302c8de.js" as="script"/><link rel="preload" href="/path---2016-04-10-thoughts-page-load-performance-html-4a682ac100c01e01b0e5.js" as="script"/><link rel="preload" href="/app-c4fd179fee9f9080d764.js" as="script"/><link rel="preload" href="/commons-61689ac9f897bb0fcb2f.js" as="script"/><title data-react-helmet="true">Thoughts on Page Load Performance - ymichael</title><link data-react-helmet="true" href="//fonts.googleapis.com/css?family=Josefin+Sans:400,600" rel="stylesheet" type="text/css"/><meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta data-react-helmet="true" name="viewport" content="width=device-width"/><style id="gatsby-inlined-css">body,html{font-family:Josefin Sans,sans-serif;font-size:18px;color:#555}.container{padding:10px;padding-bottom:50px;overflow-x:scroll}strong{font-weight:800;color:#111}ul{list-style:none;padding:0;margin:0}sup{font-weight:700;padding:0 2px}blockquote{padding-left:30px;margin-left:0;font-style:italic;border-left:8px solid #ccc}nav{margin-bottom:20px}.navlink{margin:5px}.navlink:first-child{margin-left:0}h1,h2,h3{color:#000}h2{font-size:19px}a{color:#000;text-decoration:none}nav li{display:inline-block}footer{width:100%;opacity:.9;background-color:#fff;position:fixed;bottom:0;padding:0;padding-top:10px;margin:0;height:30px}.olderposts{font-style:italic;font-size:1.2em}.post{margin:30px 0;max-width:100%}#disqus_thread,.post blockquote,.post h1,.post li,.post p,.post ul,.static_content{max-width:500px}.post img{max-height:400px;max-width:95%}@media (min-width:600px){.post img{max-width:125%}}.post .readmore{font-style:italic}.post section :first-child{margin-top:0}.post .post_title{font-size:1.7em;padding:5px 0;margin:0;color:#000}.post time{display:block;font-size:.9em;color:#888}.post code{color:#060606}.post strong{font-weight:700}.post ul{list-style:circle inside}.post li{margin:3px 0}.post pre{display:inline-block;background-color:#f4f4f4;margin-top:.2em;padding:.6em;white-space:pre-wrap;word-wrap:break-word}.footnotes li{margin-bottom:.5em}.footnotes p{display:inline}.footnotes hr{display:none}code[class*=language-],pre[class*=language-]{color:#000;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{position:relative;margin:.5em 0;box-shadow:-1px 0 0 0 #358ccb,0 0 0 1px #dfdfdf;border-left:10px solid #358ccb;background-color:#fdfdfd;background-image:linear-gradient(transparent 50%,rgba(69,142,209,.04) 0);background-size:3em 3em;background-origin:content-box;overflow:visible;padding:0}code[class*=language]{max-height:inherit;height:100%;padding:0 1em;display:block;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#fdfdfd;box-sizing:border-box;margin-bottom:1em}:not(pre)>code[class*=language-]{position:relative;padding:.2em;border-radius:.3em;color:#c92c2c;border:1px solid rgba(0,0,0,.1);display:inline;white-space:normal}pre[class*=language-]:after,pre[class*=language-]:before{content:"";z-index:-2;display:block;position:absolute;bottom:.75em;left:.18em;width:40%;height:20%;max-height:13em;box-shadow:0 13px 8px #979797;-ms-transform:rotate(-2deg);transform:rotate(-2deg)}:not(pre)>code[class*=language-]:after,pre[class*=language-]:after{right:.75em;left:auto;-ms-transform:rotate(2deg);transform:rotate(2deg)}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#7d8b99}.token.punctuation{color:#5f6364}.token.boolean,.token.constant,.token.deleted,.token.function-name,.token.number,.token.property,.token.symbol,.token.tag{color:#c92c2c}.token.attr-name,.token.builtin,.token.char,.token.function,.token.inserted,.token.selector,.token.string{color:#2f9c0a}.token.entity,.token.operator,.token.url,.token.variable{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.class-name,.token.keyword{color:#1990b8}.token.important,.token.regex{color:#e90}.language-css .token.string,.style .token.string{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.important{font-weight:400}.token.bold{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.namespace{opacity:.7}@media screen and (max-width:767px){pre[class*=language-]:after,pre[class*=language-]:before{bottom:14px;box-shadow:none}}.token.cr:before,.token.lf:before,.token.tab:not(:empty):before{color:#e0d7d1}pre[class*=language-].line-numbers{padding-left:0}pre[class*=language-].line-numbers code{padding-left:3.8em}pre[class*=language-].line-numbers .line-numbers-rows{left:0}pre[class*=language-][data-line]{padding-top:0;padding-bottom:0;padding-left:0}pre[data-line] code{position:relative;padding-left:4em}pre .line-highlight{margin-top:0}</style></head><body><div id="___gatsby"><div data-reactroot="" data-reactid="1" data-react-checksum="1301144864"><!-- react-empty: 2 --><div class="container" data-reactid="3"><nav data-reactid="4"><ul data-reactid="5"><li class="navlink" data-reactid="6"><a href="/" data-reactid="7">~/</a></li><li class="navlink" data-reactid="8"><a href="/posts" data-reactid="9">posts</a></li><li class="navlink" data-reactid="10"><a target="_blank" href="mailto:wrong92@gmail.com" data-reactid="11">say hi</a></li></ul></nav><div class="static_content" data-reactid="12"><div data-reactid="13"><article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" data-reactid="14"><!-- react-empty: 15 --><header data-reactid="16"><time itemprop="datePublished" datetime="{ post.frontmatter.date }" data-reactid="17">10 April, 2016</time><h1 class="post_title" itemprop="name" data-reactid="18">Thoughts on Page Load Performance</h1></header><section data-reactid="19"><div data-reactid="20"><p>This blog post is part learning notes and part open thoughts on how to make
+sense of the myriad of great information available for web developers trying to
+profile/optimize their sites.</p>
+<p>A large part of this is understanding how pages load in browsers and where the
+biggest bottlenecks are. Very broadly, time taken for a page to load can be
+broken down into time spent <em>inside</em> your server (generating the page), and time
+spent outside your server (network and in the browser). Most often, the latter
+is going to be a large chunk of the time taken. To quote: <a href="https://www.nateberkopec.com/2015/10/07/frontend-performance-chrome-timeline.html">Nate Berkopec's
+must-read piece on Ludicriously Fast Page
+Loads</a><sup id="fnref-0"><a href="#fn-0" class="footnote-ref">0</a></sup>:</p>
+<blockquote>
+<p>Server response times, while easy to track and instrument, are ultimately a
+meaningless performance metric from an end-user perspective. End-users don't
+care how fast your super-turbocharged bare-metal Node.js server is - they care
+about the page being completely loaded as fast as possible.</p>
+</blockquote>
+<p>Broadly, there are a number of variables that affect your page's performances.
+Things like network latency, payload size, assets, actual markup on your page,
+proper caching etc. This post focuses on time spent outside your server and some
+things you should be thinking about.</p>
+<!--more-->
+<h2>What do we really care about?</h2>
+<p>Two things you probably should care about for a page load are:</p>
+<ol>
+<li><strong>How long before your users see anything?</strong></li>
+<li><strong>How long before your users can interact with the component you care most
+about?</strong> <em>(eg. Submit some content, Expand some truncated content, Perform some
+action)</em></li>
+</ol>
+<p>Its hard to underscore just how important executing well on these two things
+are. <em>You've already gone through the trouble of building a really great product
+that people want to see/use. The countless hours of engineering/ranking/pixel
+pushing is all for nought if the user leaves before viewing any of it.</em></p>
+<p><strong>Before 1, your users are just staring at a loading spinner and a blank page</strong> -
+making this a particularly important period of time that stands between your
+users and the content they care about <em>(which is why they are visiting your site
+in the first place)</em>. This is the basis for the term 'Critical Render Path'.
+There are a lot of resources on how to optimize it and this is exactly what it
+does: reducing the time between users and your site's content.</p>
+<blockquote>
+<p>Optimizing the critical rendering path refers to prioritizing the display of
+content that relates to the current user action.<sup id="fnref-5"><a href="#fn-5" class="footnote-ref">5</a></sup></p>
+</blockquote>
+<p><strong>After 1 and before 2, users can see your content but are unable to interact
+with your site</strong>. They can't perform any actions on your site (like leave a
+comment, read more etc). I think about the relationship between these two
+different things as: The first makes sure that users stick around long enough
+to matter.  The second ensures that users have a good experience quickly and are
+able to perform actions they/you care about.</p>
+<p>For both these things, we want to:</p>
+<ol>
+<li>Track it as a metric effectively.</li>
+<li>Understand what actually blocks it from happening sooner.</li>
+<li>Diagnose, investigate and fix and relevant blockers.</li>
+</ol>
+<h2>Understanding page loads</h2>
+<p>One thing that makes it hard to reason/think about page load performance is that
+there's just so much going on for just a <em>simple</em> request.</p>
+<p>A really <em>handwavvy</em> list of things that happen during a page load/request:</p>
+<ol>
+<li>Browsers request a page</li>
+<li>DNS lookup <em>(if not cached already)</em></li>
+<li>Redirect maybe?</li>
+<li>TCP connection</li>
+<li>TLS <em>(if is https, session resumption maybe?)</em></li>
+<li><em>Server does its work</em></li>
+<li>First byte</li>
+<li>Gets the HEAD</li>
+<li>Parses the incoming HTML</li>
+<li>Sees a CSS link tag.</li>
+<li>Request CSS <em>(we cannot paint till we get this)</em></li>
+<li>Sees a JS subresource <em>(is it async?, if not, block till we get it)</em></li>
+<li>Can we paint yet? Is CSS in yet?</li>
+<li>...</li>
+<li>first paint - User sees content <em>(but probably cannot click on things yet
+because Javascript..)</em></li>
+<li>User is able to interact with content</li>
+<li><em>... (images come in, async js comes in)</em></li>
+<li>window.onload event.</li>
+</ol>
+<p>Add cache misses, spotty connections, multiple connections at once and it becomes
+really hard to intuitively figure out which parts are contributing the most to
+the slowness or waiting time.</p>
+<p>Oh yea, if you use web fonts. There's that too<sup id="fnref-7"><a href="#fn-7" class="footnote-ref">7</a></sup>. Browsers don't like
+prefetching fonts until they realise they actually need it. They also dislike
+rendering system fonts while waiting and requesting for your fancy web font<sup id="fnref-8"><a href="#fn-8" class="footnote-ref">8</a></sup>,
+leading to more time before users see your content.<sup id="fnref-18"><a href="#fn-18" class="footnote-ref">18</a></sup></p>
+<p>I left out where most of the navigation timing events fire in the list above -
+things like DOMInteractive DOMContentLoaded etc because they depend to some
+extent on the mark up on your page.</p>
+<p>For a more in-depth deep dive into the nitty gritty details that go into a page
+load: you should read <a href="https://www.nateberkopec.com/2015/10/07/frontend-performance-chrome-timeline.html">Nate's post</a>
+linked above. This <a href="https://www.youtube.com/watch?v=XeMDXlJ051s">video</a> also
+does a good job describing some of the basics of how browsers treat JS and CSS
+with respect to rendering.</p>
+<h2>The Numbers</h2>
+<p>The great thing about the current state of client side performance is that there
+are lots of browser APIs and information available to track the numbers we
+really care about:</p>
+<ul>
+<li>There's the <strong>Navigation Timing API</strong><sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup> - which basically contains timestamps of
+events related to the page load</li>
+<li>There's <strong>First Paint</strong><sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup> available on some browsers, that tell you when the
+browser first painted something visually to the user.</li>
+<li>There's the <strong>Resource Timing API</strong><sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup> - which is basically Navigation Timing but
+for your subresources (JS, CSS, Images etc)</li>
+</ul>
+<p>There's a really nice <a href="http://kaaes.github.io/timing/">bookmarklet</a><sup id="fnref-4"><a href="#fn-4" class="footnote-ref">4</a></sup> that makes
+is really easy to visualize and reason about navigation timing information. It
+produces something like this:</p>
+<p><img src="/static/img/blog/navtiming.png" alt="navigation timing visualization"></p>
+<p>It breaks up the various phases of a request into network, server and browser
+which makes it really intuitive to reason about. I highly recommend giving it a
+go. <em>I find it particularly useful to visualize navigation timing under multiple
+different conditions (network, cache etc) and try and figure out when certain subresources
+come in, paint happens etc without looking at the actual network tabs just to
+test my understanding of what is happening. It works wonders. No, really.</em></p>
+<h2>How long before your users see anything? <em>(aka First Meaningful Paint)</em></h2>
+<p>Earlier in this post, I mentioned that we really care about two things. This is
+the first of them. One way to measure this is via the first paint event which
+gives us a good proxy to when users begin to see content. <strong>However it important
+to be aware that this number potentially isn't meaningful to the extent that
+your first paint doesn't show anything useful to the user</strong>.</p>
+<p>The real number we want that's a little harder to measure is first <em>meaningful</em>
+paint.</p>
+<p>Take the following filmstrip of &#x3C;quora.com> as an example:</p>
+<p><img src="/static/img/blog/quora-filmstrip.png" alt="Quora film strip"></p>
+<p>First paint happened at 779ms but really, we care about the paint at 1.37s.
+Users care about the pain at 1.37s. I'm not sure how to go about measuring this
+in production easily but this particular differentiation helps us to the extent
+that we can go about debugging slow paint times with a better idea of what we're
+trying to move.</p>
+<p>Oh, if you're wondering how I got this filmstrip, you can thank that awesome
+people working on Chrome DevTools<sup id="fnref-13"><a href="#fn-13" class="footnote-ref">13</a></sup>. <em>You probably can figure this out by
+just fiddling with devtools for a bit - hint: its in the network tab and an icon
+that looks like a video camera</em>.</p>
+<p>First paint is blocked by a number of things:</p>
+<ol start="0">
+<li>
+<p><strong>TTFB (Time to first byte)</strong>: Often, network latency is going to be a big
+factor for first paint. You want to make sure that your server responds
+quickly<sup id="fnref-14"><a href="#fn-14" class="footnote-ref">14</a></sup> which basically involves auditing everything that happens
+between request start and first byte which involves the DNS lookup, initial
+TCP handshake, TLS negotiation ... up to when your server returns its first
+byte.</p>
+</li>
+<li>
+<p><strong>HTML</strong>: This is obvious but your content needs to be there before the
+browser can render it. Often, you'd want to prioritise above the fold (stuff
+the user can see and is in their viewport) and your HTML/markup should
+reflect that.<sup id="fnref-15"><a href="#fn-15" class="footnote-ref">15</a></sup></p>
+</li>
+<li>
+<p><strong>CSS payload</strong>: If you have any external stylesheet, this needs
+to be fetched before the browser will render anything after it. If your users
+have to fetch 50KB of css just to see the logo of your site, you probably
+have some low hanging wins there.</p>
+<blockquote>
+<p>By default CSS is treated as a render blocking resource, which means that
+the browser will hold rendering of any processed content until the CSSOM is
+constructed. Make sure to keep your CSS lean, deliver it as quickly as
+possible, and use media types and queries to unblock rendering.<sup id="fnref-16"><a href="#fn-16" class="footnote-ref">16</a></sup></p>
+</blockquote>
+</li>
+<li>
+<p><strong>Blocking JS</strong>: Any non async javascript tag is going to block rendering of
+content after it. This really shouldn't be happening but its something to
+be aware of since you might need this for certain things. <em>Its always worth
+considering if any time spent here blocking paint can be spent after we paint
+instead.</em></p>
+</li>
+</ol>
+<p>Using a combination of Navigation Timing and Resource Timing, we can figure out
+when and how often any of the above blocks first paint. This will probably
+differ based on your mark up and what optimizations you have in place. It'll
+also vary based on cache hit/miss cases.</p>
+<p>Knowing which of these form the bottleneck for you application's first paint can
+go a long way in helping you meaningfully work towards make it faster. Oh I
+highly recommend watching/reading a number bunch of perf
+audits<a href="">^9</a><a href="">^11</a> in the wild - very informative and practically
+applicable.<sup id="fnref-17"><a href="#fn-17" class="footnote-ref">17</a></sup></p>
+<h3>How long before your users an interact with stuff they care about?</h3>
+<p>This second metric is a little more tricky and varies more based on the set up of
+your javascript and the purpose of your page.<em>For clarification, this shouldn't
+be confused with the DOMInteractive event in Navigation Timing</em>. What I'm
+referring to here is something that you'll probably need to define for your site</p>
+<ul>
+<li>some core action that users take when on your site that relies on javascript.</li>
+</ul>
+<p>The reason top level metrics and numbers in navigation timing here break down is
+that they aren't granular enough. For instance:</p>
+<ul>
+<li><code>LoadEventEnd</code> is probably an upper bound of this number but probably includes
+a lot of unnecessary things like images that probably make it more noisy than
+we'd like. As your javascript complexity increases, you probably have some
+long tail of interactions that you don't care as much and timeliness is less
+important there.</li>
+<li><code>DOMContentLoaded</code> is fired when your intial DOM is completely loaded and
+parsed but doesn't account for async javascript files which probably/might be
+required before your core action is functional.</li>
+</ul>
+<p><em>I find this <a href="http://kaaes.github.io/timing/info.html">page</a> really useful as a
+cheatsheet on what each event in Navigation Timing means and often find myself
+referring to it.</em></p>
+<h2>Closing thoughts</h2>
+<p>There's an age old adage about measuring and profiling before trying to optimise
+anything. There's no reason why it shouldn't hold true for client side
+performance. More often than not, I've been surprised when measuring something
+or when some improvement didn't move some metrics as much as I expected it to.</p>
+<p>In the above two client side page load metrics, there are often multiple variables
+that affect them for different sets of users: things like users on mobile, new
+users (more cache misses) - making it all the more important to first have a
+good understanding of where the bottlenecks in your site actually are.</p>
+<h2>Footnotes</h2>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-0">
+<p>No seriously, if you had to choose, just read his post and skip this.</p>
+<a href="#fnref-0" class="footnote-backref">↩</a>
+</li>
+<li id="fn-1">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API">Navigation Timing API - MDN</a></p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>Chrome - <code>chrome.loadTimes().firstPaintTime</code>. You should probably use this <a href="https://github.com/addyosmani/timing.js/">library</a> by Addy Osmani.</p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
+</li>
+<li id="fn-3">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API">Resource Timing API - MDN</a></p>
+<a href="#fnref-3" class="footnote-backref">↩</a>
+</li>
+<li id="fn-4">
+<p><a href="http://kaaes.github.io/timing/">http://kaaes.github.io/timing/</a></p>
+<a href="#fnref-4" class="footnote-backref">↩</a>
+</li>
+<li id="fn-5">
+<p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=en">https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=en</a></p>
+<a href="#fnref-5" class="footnote-backref">↩</a>
+</li>
+<li id="fn-7">
+<p><a href="https://www.igvita.com/2014/01/31/optimizing-web-font-rendering-performance/">Good primer on best practices working with web fonts by Ilya Grigorik</a></p>
+<a href="#fnref-7" class="footnote-backref">↩</a>
+</li>
+<li id="fn-8">
+<p>Nice history on web font rendering - <a href="https://dev.opera.com/articles/better-font-face/">https://dev.opera.com/articles/better-font-face/</a></p>
+<a href="#fnref-8" class="footnote-backref">↩</a>
+</li>
+<li id="fn-9">
+<p><a href="https://github.com/reddit/reddit-mobile/issues/247">Paul Irish walks through Reddit Mobile in a PR</a></p>
+<a href="#fnref-9" class="footnote-backref">↩</a>
+</li>
+<li id="fn-10">
+<p><a href="http://www.paulirish.com/2015/advanced-performance-audits-with-devtools/">More Paul Irish Audits</a></p>
+<a href="#fnref-10" class="footnote-backref">↩</a>
+</li>
+<li id="fn-11">
+<p><a href="https://docs.google.com/document/d/1E2w0UQ4RhId5cMYsDcdcNwsgL0gP_S6SDv27yi1mCEY/edit?pref=2&#x26;pli=1">Perf audit of Tumblr's Dashboard</a></p>
+<a href="#fnref-11" class="footnote-backref">↩</a>
+</li>
+<li id="fn-12">
+<p><a href="http://www.perf-tooling.today/audits">http://www.perf-tooling.today/audits</a></p>
+<a href="#fnref-12" class="footnote-backref">↩</a>
+</li>
+<li id="fn-13">
+<p><a href="https://developers.google.com/web/updates/2015/07/devtools-digest-film-strip-and-a-new-home-for-throttling?hl=en">https://developers.google.com/web/updates/2015/07/devtools-digest-film-strip-and-a-new-home-for-throttling?hl=en</a></p>
+<a href="#fnref-13" class="footnote-backref">↩</a>
+</li>
+<li id="fn-14">
+<p><a href="https://plus.google.com/+IlyaGrigorik/posts/GTWYbYWP6xP">https://plus.google.com/+IlyaGrigorik/posts/GTWYbYWP6xP</a></p>
+<a href="#fnref-14" class="footnote-backref">↩</a>
+</li>
+<li id="fn-15">
+<p>The early bytes of your page are premium first class HTTP seats. Make them worth your while.</p>
+<a href="#fnref-15" class="footnote-backref">↩</a>
+</li>
+<li id="fn-16">
+<p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css?hl=en">https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css?hl=en</a></p>
+<a href="#fnref-16" class="footnote-backref">↩</a>
+</li>
+<li id="fn-17">
+<p>I spend a lot of time trying to replicate and understand these perf audits. I highly recommend giving them a go.</p>
+<a href="#fnref-17" class="footnote-backref">↩</a>
+</li>
+<li id="fn-18">
+<p><code>rel=preload</code> cannot come fast enough: <a href="https://www.bramstein.com/writing/preload-hints-for-web-fonts.html">https://www.bramstein.com/writing/preload-hints-for-web-fonts.html</a></p>
+<a href="#fnref-18" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div></div></section></article><br data-reactid="21"/><br data-reactid="22"/><div id="disqus_thread" data-reactid="23"></div></div></div></div><div id="google-analytics" data-reactid="24"></div></div></div><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-c4fd179fee9f9080d764.js","195351340454287":"component---src-templates-post-js-f43e60ad07d7f302c8de.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","35783957827783":"component---src-pages-index-js-b874815858e6e5cf8f5d.js","261085952541737":"component---src-pages-posts-js-46405386cdcb94adf79f.js","60335399758886":"path----557518bd178906f8d58a.js","214762736445329":"path---2012-06-07-i-suck-at-hackathons-html-a1288a810f759a11a84b.js","62720123088807":"path---2012-06-07-remembering-why-i-code-html-0099c9fbd4c90e61eced.js","187134428386528":"path---2012-08-20-my-talent-html-84fb9bccc2389a5aca3f.js","88156359368087":"path---2012-09-03-redesigning-hush-html-57729602eed46f2c056c.js","236515821984100":"path---2012-10-01-disappointed-html-8e9ab573f129718aa727.js","158650160415161":"path---2012-10-02-why-modivle-html-65a6114e562973df657e.js","178220909524583":"path---2012-10-08-decisions-html-e0f058dd12a22d21d5d0.js","62431558595948":"path---2012-11-30-three-down-html-97d3bfc8df437cabe718.js","269751372802256":"path---2013-03-17-deliberately-learn-stuff-html-b1ca5917f17b519aaa07.js","65429831292191":"path---2014-03-08-profiling-python-with-cprofile-html-bdca1ec2650ddabea0b4.js","74653329452217":"path---2014-05-10-javascript-testing-with-karma-js-html-d925c4b358bd7d7d0a6d.js","26019895347478":"path---2014-09-24-build-and-run-eclipse-java-projects-on-the-command-line-html-46ed579feced157edef3.js","2708132243695":"path---2014-12-17-python-testing-with-nose-for-beginners-html-afab4b3da02fe3f36fbc.js","196209814913968":"path---2015-05-28-cprofilev-v-2-html-c19c0290992b9be6a3bc.js","70478302107044":"path---2015-05-28-simple-server-management-with-ansible-html-c1b526138f85149cd11c.js","198956211543598":"path---2015-06-06-some-notes-playing-with-haproxy-html-df2a5db227f52a7007b8.js","231217678519557":"path---2016-04-10-thoughts-page-load-performance-html-4a682ac100c01e01b0e5.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-0eaa9ec956863f723d14.js","140933230050240":"path---posts-cab5beb1caaac4e7b9e5.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-bd42ed85c54d9cc558de.js"}/*]]>*/</script><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/commons-61689ac9f897bb0fcb2f.js","/app-c4fd179fee9f9080d764.js","/path---2016-04-10-thoughts-page-load-performance-html-4a682ac100c01e01b0e5.js","/component---src-templates-post-js-f43e60ad07d7f302c8de.js","/component---src-layouts-index-js-bd42ed85c54d9cc558de.js"])/*]]>*/</script></body></html>

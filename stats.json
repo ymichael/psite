@@ -1,0 +1,122 @@
+{
+  "assetsByChunkName": {
+    "path---2014-12-17-python-testing-with-nose-for-beginners-html": [
+      "path---2014-12-17-python-testing-with-nose-for-beginners-html-afab4b3da02fe3f36fbc.js",
+      "path---2014-12-17-python-testing-with-nose-for-beginners-html-afab4b3da02fe3f36fbc.js.map"
+    ],
+    "path---2014-09-24-build-and-run-eclipse-java-projects-on-the-command-line-html": [
+      "path---2014-09-24-build-and-run-eclipse-java-projects-on-the-command-line-html-46ed579feced157edef3.js",
+      "path---2014-09-24-build-and-run-eclipse-java-projects-on-the-command-line-html-46ed579feced157edef3.js.map"
+    ],
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js-b874815858e6e5cf8f5d.js",
+      "component---src-pages-index-js-b874815858e6e5cf8f5d.js.map"
+    ],
+    "path---": [
+      "path----557518bd178906f8d58a.js",
+      "path----557518bd178906f8d58a.js.map"
+    ],
+    "path---2012-11-30-three-down-html": [
+      "path---2012-11-30-three-down-html-97d3bfc8df437cabe718.js",
+      "path---2012-11-30-three-down-html-97d3bfc8df437cabe718.js.map"
+    ],
+    "path---2012-06-07-remembering-why-i-code-html": [
+      "path---2012-06-07-remembering-why-i-code-html-0099c9fbd4c90e61eced.js",
+      "path---2012-06-07-remembering-why-i-code-html-0099c9fbd4c90e61eced.js.map"
+    ],
+    "path---2014-03-08-profiling-python-with-cprofile-html": [
+      "path---2014-03-08-profiling-python-with-cprofile-html-bdca1ec2650ddabea0b4.js",
+      "path---2014-03-08-profiling-python-with-cprofile-html-bdca1ec2650ddabea0b4.js.map"
+    ],
+    "path---2015-05-28-simple-server-management-with-ansible-html": [
+      "path---2015-05-28-simple-server-management-with-ansible-html-c1b526138f85149cd11c.js",
+      "path---2015-05-28-simple-server-management-with-ansible-html-c1b526138f85149cd11c.js.map"
+    ],
+    "path---2014-05-10-javascript-testing-with-karma-js-html": [
+      "path---2014-05-10-javascript-testing-with-karma-js-html-d925c4b358bd7d7d0a6d.js",
+      "path---2014-05-10-javascript-testing-with-karma-js-html-d925c4b358bd7d7d0a6d.js.map"
+    ],
+    "path---2012-09-03-redesigning-hush-html": [
+      "path---2012-09-03-redesigning-hush-html-57729602eed46f2c056c.js",
+      "path---2012-09-03-redesigning-hush-html-57729602eed46f2c056c.js.map"
+    ],
+    "component---src-layouts-index-js": [
+      "component---src-layouts-index-js-bd42ed85c54d9cc558de.js",
+      "component---src-layouts-index-js-bd42ed85c54d9cc558de.js.map"
+    ],
+    "path---posts": [
+      "path---posts-cab5beb1caaac4e7b9e5.js",
+      "path---posts-cab5beb1caaac4e7b9e5.js.map"
+    ],
+    "path---index": [
+      "path---index-0eaa9ec956863f723d14.js",
+      "path---index-0eaa9ec956863f723d14.js.map"
+    ],
+    "path---2012-10-02-why-modivle-html": [
+      "path---2012-10-02-why-modivle-html-65a6114e562973df657e.js",
+      "path---2012-10-02-why-modivle-html-65a6114e562973df657e.js.map"
+    ],
+    "component---src-pages-404-js": [
+      "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
+      "component---src-pages-404-js-4503918ea3a16cfcdb75.js.map"
+    ],
+    "commons": [
+      "commons-61689ac9f897bb0fcb2f.js",
+      "commons-61689ac9f897bb0fcb2f.js.map"
+    ],
+    "path---2012-10-08-decisions-html": [
+      "path---2012-10-08-decisions-html-e0f058dd12a22d21d5d0.js",
+      "path---2012-10-08-decisions-html-e0f058dd12a22d21d5d0.js.map"
+    ],
+    "path---404-html": [
+      "path---404-html-a0e39f21c11f6a62c5ab.js",
+      "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2012-08-20-my-talent-html": [
+      "path---2012-08-20-my-talent-html-84fb9bccc2389a5aca3f.js",
+      "path---2012-08-20-my-talent-html-84fb9bccc2389a5aca3f.js.map"
+    ],
+    "component---src-templates-post-js": [
+      "component---src-templates-post-js-f43e60ad07d7f302c8de.js",
+      "component---src-templates-post-js-f43e60ad07d7f302c8de.js.map"
+    ],
+    "path---2015-05-28-cprofilev-v-2-html": [
+      "path---2015-05-28-cprofilev-v-2-html-c19c0290992b9be6a3bc.js",
+      "path---2015-05-28-cprofilev-v-2-html-c19c0290992b9be6a3bc.js.map"
+    ],
+    "path---2015-06-06-some-notes-playing-with-haproxy-html": [
+      "path---2015-06-06-some-notes-playing-with-haproxy-html-df2a5db227f52a7007b8.js",
+      "path---2015-06-06-some-notes-playing-with-haproxy-html-df2a5db227f52a7007b8.js.map"
+    ],
+    "path---2012-06-07-i-suck-at-hackathons-html": [
+      "path---2012-06-07-i-suck-at-hackathons-html-a1288a810f759a11a84b.js",
+      "path---2012-06-07-i-suck-at-hackathons-html-a1288a810f759a11a84b.js.map"
+    ],
+    "path---2016-04-10-thoughts-page-load-performance-html": [
+      "path---2016-04-10-thoughts-page-load-performance-html-4a682ac100c01e01b0e5.js",
+      "path---2016-04-10-thoughts-page-load-performance-html-4a682ac100c01e01b0e5.js.map"
+    ],
+    "app": [
+      "app-c4fd179fee9f9080d764.js",
+      "build-js-styles.css",
+      "app-c4fd179fee9f9080d764.js.map",
+      "build-js-styles.css.map"
+    ],
+    "path---2012-10-01-disappointed-html": [
+      "path---2012-10-01-disappointed-html-8e9ab573f129718aa727.js",
+      "path---2012-10-01-disappointed-html-8e9ab573f129718aa727.js.map"
+    ],
+    "path---404": [
+      "path---404-a0e39f21c11f6a62c5ab.js",
+      "path---404-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-pages-posts-js": [
+      "component---src-pages-posts-js-46405386cdcb94adf79f.js",
+      "component---src-pages-posts-js-46405386cdcb94adf79f.js.map"
+    ],
+    "path---2013-03-17-deliberately-learn-stuff-html": [
+      "path---2013-03-17-deliberately-learn-stuff-html-b1ca5917f17b519aaa07.js",
+      "path---2013-03-17-deliberately-learn-stuff-html-b1ca5917f17b519aaa07.js.map"
+    ]
+  }
+}
