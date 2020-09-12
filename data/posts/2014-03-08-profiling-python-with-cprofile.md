@@ -2,6 +2,7 @@
 layout: post
 title:  "Profiling python with cProfile"
 date:   2014-03-08
+url: null
 ---
 
 A couple of days ago, I had an assignment for an [Information Retrieval

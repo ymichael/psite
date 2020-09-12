@@ -3,7 +3,7 @@
   "description": "ymichael's personal site",
   "version": "1.0.0",
   "dependencies": {
-    "gatsby": "^1.9.223",
+    "gatsby": "^1.9.250",
     "gatsby-link": "^1.6.38",
     "gatsby-plugin-react-helmet": "^2.0.6",
     "gatsby-remark-prismjs": "^1.2.17",

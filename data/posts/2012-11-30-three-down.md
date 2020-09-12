@@ -2,6 +2,7 @@
 layout: post
 title:  "Three Down"
 date:   2012-11-30
+url: null
 ---
 
 This semester has been crazy to say the least. As it draws to an end, I'm going to try and pen down the lessons learnt, the amazing experiences, and my thoughts before I forget them.

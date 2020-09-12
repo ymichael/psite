@@ -2,23 +2,11 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 class IndexPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { markdownRemark: { html: '' } }
-  }
-
-  componentWillMount() {
-    // Run a test to see how Google indexes this page.
-    if (typeof window != 'undefined' && window.document) {
-      this.setState({ markdownRemark: this.props.data.markdownRemark })
-    }
-  }
-
   render() {
     return (
       <div>
         <div
-          dangerouslySetInnerHTML={{ __html: this.state.markdownRemark.html }}
+          dangerouslySetInnerHTML={{ __html: this.props.data.markdownRemark.html }}
         />
       </div>
     )

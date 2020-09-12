@@ -4,24 +4,19 @@ title: ymichael
 page: about
 ---
 
-Hi there, I'm michael. I'm a software engineer at [Quora](//quora.com) on the
-Platform Team.
+Hi there, I'm michael. I'm a Singaporean 🇸🇬 living in San Francisco. I'm currently a software engineer at [Figma][] on the editor platform team.
 
-I love coffee, food _(Yum chicken rice & pho)_ and reading about random things
-on hackernews. In my free time, I follow the NBA and the TV shows that I've made
-the mistake of starting.
+I enjoy a nice cup of coffee, snacking and learning random things.
 
-Previously, I interned at Google on the Docs team. I also interned at Quora a
-while back. I used to run [NUS Hackers][], started [hackerschool][] and [project
+Previously, I was at [Quora][] and before that I interned at Google on the Docs team. I used to run [NUS Hackers][], started [hackerschool][] and [project
 intern][].
 
-You can find me on [Github][], [Twitter][] and [Quora][].
-
+You can find me on [Github][] and [Twitter][].
 
 [NUS Hackers]: //nushackers.org
 [hackerschool]: //school.nushackers.org
 [project intern]: //ymichael.github.io/projectintern
 [Github]: //github.com/ymichael
 [Twitter]: //twitter.com/_ymichael
-[Quora]: //quora.com/Michael-Yong
-
+[Figma]: //figma.com/about
+[Quora]: //quora.com

@@ -2,6 +2,7 @@
 layout: post
 title:  "Thoughts on Page Load Performance"
 date:   2016-04-10
+url: null
 ---
 This blog post is part learning notes and part open thoughts on how to make
 sense of the myriad of great information available for web developers trying to

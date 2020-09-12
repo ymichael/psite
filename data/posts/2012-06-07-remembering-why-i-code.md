@@ -3,6 +3,7 @@ layout: post
 title:  "Remembering why I code"
 date:   2012-06-07
 archive: true
+url: null
 ---
 
 I bought this [domain](http://yrmichael.com) about 2 months ago. It was intended to be a personal site of sorts, to make it easier for me to share the stuff I build.

@@ -2,6 +2,7 @@
 layout: post
 title:  "Why MODIVLE"
 date:   2012-10-02
+url: null
 ---
 
 A question that keeps coming up regarding [MODIVLE](http://modivle.yrmichael.com) is why I'm doing it and what made me do it.

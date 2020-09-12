@@ -2,6 +2,7 @@
 layout: post
 title:  "Javascript testing with karma js"
 date:   2014-05-10
+url: null
 ---
 
 It took me a while to start using [Karma js][], so I figured I write about the

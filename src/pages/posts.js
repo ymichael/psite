@@ -33,6 +33,7 @@ export const query = graphql`
           frontmatter {
             archive
             title
+            url
             date(formatString: "DD MMMM, YYYY")
           }
           fields {

@@ -3,6 +3,7 @@ layout: post
 title:  "Disappointed"
 date:   2012-10-01
 archive: true
+url: null
 ---
 
 Building Coffee proved to be a great learning experience. **I learnt so much.**

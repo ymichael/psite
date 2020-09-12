@@ -2,6 +2,7 @@
 layout: post
 title:  "Deliberately learn stuff"
 date:   2013-03-17
+url: null
 ---
 
 Last week, it hit me during one of my midterms that I was not making the best use of my time. Not learning as much as I could. Wasting my time doing stupid things, pointless things.

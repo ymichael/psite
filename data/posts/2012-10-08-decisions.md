@@ -3,6 +3,7 @@ layout: post
 title:  "Decisions"
 date:   2012-10-08
 archive: true
+url: null
 ---
 
 > how do I make decisions?

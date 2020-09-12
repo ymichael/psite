@@ -14,8 +14,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     // https://www.gatsbyjs.org/blog/2017-11-08-migrate-from-jekyll-to-gatsby/
     let slug = createFilePath({ node, getNode, basePath: `pages` })
 
-    // Only create slugs for blog posts.
-    if (slug.startsWith('/posts/')) {
+    // Only create slugs for internal blog posts.
+    if (slug.startsWith('/posts/') && !node.frontmatter.url) {
       slug = slug.slice('/posts'.length);
       const [, date, title] = slug.match(/^\/([\d]{4}-[\d]{2}-[\d]{2})-{1}(.+)\/$/)
       const value = `/${slugify([date], '/')}/${title}.html`
