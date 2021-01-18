@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Javascript testing with karma js"
+title:  "JavaScript testing with karma js"
 date:   2014-05-10
 url: null
 ---

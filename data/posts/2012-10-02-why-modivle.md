@@ -2,6 +2,7 @@
 layout: post
 title:  "Why MODIVLE"
 date:   2012-10-02
+archive: true
 url: null
 ---
 
