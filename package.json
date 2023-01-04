@@ -3,11 +3,11 @@
   "description": "ymichael's personal site",
   "version": "1.0.0",
   "dependencies": {
-    "gatsby": "^1.9.250",
+    "gatsby": "^5.3.3",
     "gatsby-link": "^1.6.38",
     "gatsby-plugin-react-helmet": "^2.0.6",
     "gatsby-remark-prismjs": "^1.2.17",
-    "gatsby-source-filesystem": "^1.5.26",
+    "gatsby-source-filesystem": "^5.3.1",
     "gatsby-transformer-remark": "^1.7.34",
     "react-helmet": "^5.2.0",
     "slug": "^0.9.1"
