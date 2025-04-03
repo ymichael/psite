@@ -1,0 +1,2 @@
+webpackJsonp([0x81b8806e4260],{369:function(a,n){a.exports={data:{markdownRemark:{html:"<p>Hi there, I'm michael. I'm a Singaporean 🇸🇬 living in San Francisco.</p>"}},pathContext:{}}}});
+//# sourceMappingURL=path---index-324d033a04a4797d5f4a.js.map
