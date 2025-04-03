@@ -2,6 +2,7 @@
 layout: post
 title:  "Thoughts on Page Load Performance"
 date:   2016-04-10
+archive: true
 url: null
 ---
 This blog post is part learning notes and part open thoughts on how to make

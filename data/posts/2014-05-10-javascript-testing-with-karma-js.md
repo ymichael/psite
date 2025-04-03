@@ -2,6 +2,7 @@
 layout: post
 title:  "JavaScript testing with karma js"
 date:   2014-05-10
+archive: true
 url: null
 ---
 

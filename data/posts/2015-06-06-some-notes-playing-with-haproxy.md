@@ -2,6 +2,7 @@
 layout: post
 title:  "Some notes playing with HAProxy"
 date:   2015-06-06
+archive: true
 url: null
 ---
 I've been meaning to try out [HAProxy](http://www.haproxy.org/), a tcp/http load balancer, for a while now. Partially because I've heard many great things about it and also because of it's prevalence[^1]. I first encountered HAProxy during my internship at Quora.

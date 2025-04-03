@@ -2,6 +2,7 @@
 layout: post
 title:  "Deliberately learn stuff"
 date:   2013-03-17
+archive: true
 url: null
 ---
 

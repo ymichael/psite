@@ -14,18 +14,6 @@ const Header = ({ pathname }) => {
             </h1>
           </a>
         </header>
-        <nav>
-          <ul>
-            <li className="navlink">
-              <Link to="/posts">posts</Link>
-            </li>
-            <li className="navlink">
-              <a target="_blank" href="mailto:wrong92@gmail.com">
-                say hi
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     )
   }
@@ -34,14 +22,6 @@ const Header = ({ pathname }) => {
       <ul>
         <li className="navlink">
           <Link to="/">~/</Link>
-        </li>
-        <li className="navlink">
-          <Link to="/posts">posts</Link>
-        </li>
-        <li className="navlink">
-          <a target="_blank" href="mailto:wrong92@gmail.com">
-            say hi
-          </a>
         </li>
       </ul>
     </nav>

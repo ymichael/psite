@@ -2,6 +2,7 @@
 layout: post
 title:  cProfileV v2
 date:   2015-05-28
+archive: true
 url: null
 ---
 I recently made some changes to [cProfileV](https://github.com/ymichael/cprofilev), adding the ability to immediately profile a script and run it at the same time.

@@ -2,6 +2,7 @@
 layout: post
 title:  Simple Server Management with Ansible
 date:   2015-05-28
+archive: true
 url: null
 ---
 

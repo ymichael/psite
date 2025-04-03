@@ -2,6 +2,7 @@
 layout: post
 title:  Python Testing with nose for beginners
 date:   2014-12-17
+archive: true
 url: null
 ---
 I've been meaning to write a simple primer for unit testing in python ever since

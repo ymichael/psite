@@ -2,6 +2,7 @@
 layout: post
 title:  "Profiling python with cProfile"
 date:   2014-03-08
+archive: true
 url: null
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title:  "Build and run eclipse java projects from the command line"
 date:   2014-09-24
+archive: true
 url: null
 ---
 __You can skip the context of this post if all you need is the commands.__
